@@ -1,0 +1,6 @@
+# dpu.proto for DPU
+Terminator = 0x4;
+   
+get_data {
+   in "%#s";
+}

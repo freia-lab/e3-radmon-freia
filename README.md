@@ -1,2 +1,1 @@
-# e3-radmon-freia
-Radiation monitor for FREIA
+# e3-radmon-nessa

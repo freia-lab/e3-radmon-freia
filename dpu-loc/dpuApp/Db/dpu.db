@@ -1,0 +1,9 @@
+record(waveform, "$(P)InData") {
+   field (DESC, "Unsolicited data")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data $(PORT)")
+   field (FTVL, "CHAR")
+   field (NELM, "100")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+}
