@@ -16,7 +16,7 @@ drvAsynIPPortConfigure("PORT1","192.168.10.5:4001",0,0,0)
 epicsEnvSet("STREAM_PROTOCOL_PATH","$(dpu_DB)")
 
 #Load your database defining the EPICS records
-dbLoadRecords("dpu.db", "PORT=PORT1,P=RadProt-")
+dbLoadRecords("dpu.db", "PORT=PORT1,P=RadProtFr-")
 
 asynSetTraceIOMask "PORT1",0,4   # Enable traceIOHex
 #asynSetTraceMask "PORT1",0,0x1f     # Enable traceError and traceIODriver

@@ -1,9 +1,34 @@
-record(waveform, "$(P)InData") {
-   field (DESC, "Unsolicited data")
+#record(waveform, "$(P)InData") {
+#   field (DESC, "Unsolicited data")
+#   field (DTYP, "stream")
+#   field (INP, "@dpu.proto get_data $(PORT)")
+#   field (FTVL, "CHAR")
+#   field (NELM, "100")
+#   field (PINI, "YES")
+#   field (SCAN, "I/O Intr")
+#}
+
+record(stringin, "$(P)Det1:sString") {
+   field (DESC, "Data Det 1")
    field (DTYP, "stream")
-   field (INP, "@dpu.proto get_data $(PORT)")
-   field (FTVL, "CHAR")
-   field (NELM, "100")
+   field (INP, "@dpu.proto get_data(1,0x41) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
+}
+
+record(ai, "$(P)Det1:sRate") {
+   field (DESC, "Rate Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_dose_rate(1,0x41,$(P)Det1:sDose) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
 }
+
+
+record(ai, "$(P)Det1:sDose") {
+   field (DESC, "Rate Det 1")
+   field (PINI, "YES")
+#   field (SCAN, "1 second")
+}
+
+

@@ -1,6 +1,12 @@
 # dpu.proto for DPU
-Terminator = 0x4;
-   
+Terminator = 0x04;
+
 get_data {
-   in "%#s";
+   out  0x01 "000\$114ctr2" $2 "%1<notsum>";
+   in 0x01 "%#33s%*1<notsum>";
+}
+
+get_dose_rate {
+#   out  0x01 "000\$114ctr2" $2 "%1<notsum>";
+   in 0x01 "0\$10036%5f%*c%(EGU)#5s" $2 "%*ca%*c%*c%(\$3)5f%*c%(\$3.EGU)#3s" "%*1<notsum>";
 }
