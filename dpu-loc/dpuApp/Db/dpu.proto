@@ -3,7 +3,7 @@ Terminator = 0x04;
 
 get_data {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";
-   in 0x01 "%#33s%*1<notsum>";
+   in 0x01 "0\$1%#31s%*1<notsum>";
 }
 
 get_dose_rate {

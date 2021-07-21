@@ -12,23 +12,69 @@ record(stringin, "$(P)Det1:sString") {
    field (DESC, "Data Det 1")
    field (DTYP, "stream")
    field (INP, "@dpu.proto get_data(1,0x41) $(PORT)")
-   field (PINI, "YES")
-   field (SCAN, "1 second")
-}
-
-record(ai, "$(P)Det1:sRate") {
-   field (DESC, "Rate Det 1")
-   field (DTYP, "stream")
-   field (INP, "@dpu.proto get_dose_rate(1,0x41,$(P)Det1:sDose) $(PORT)")
-   field (PINI, "YES")
-   field (SCAN, "I/O Intr")
-}
-
-
-record(ai, "$(P)Det1:sDose") {
-   field (DESC, "Rate Det 1")
-   field (PINI, "YES")
+#   field (PINI, "YES")
 #   field (SCAN, "1 second")
 }
 
+#record(ai, "$(P)Det1:sRate") {
+#   field (DESC, "Rate Det 1")
+ #  field (DTYP, "stream")
+  # field (INP, "@dpu.proto get_dose_rate(1,0x41,$(P)Det1:sDose) $(PORT)")
+   #field (PINI, "YES")
+   #field (SCAN, "I/O Intr")
+#}
 
+
+#record(ai, "$(P)Det1:sDose") {
+#   field (DESC, "Dose Det 1")
+#   field (PINI, "YES")
+#   field (SCAN, "1 second")
+#}
+
+record(stringin, "$(P)Det2:sString") {
+   field (DESC, "Data Det 2")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data(2,0x41) $(PORT)")
+#   field (PINI, "YES")
+#   field (SCAN, "2 second")
+}
+
+#record(ai, "$(P)Det2:sRate") {
+ #  field (DESC, "Rate Det 2")
+  # field (DTYP, "stream")
+   #field (INP, "@dpu.proto get_dose_rate(2,0x41,$(P)Det2:sDose) $(PORT)")
+   #field (SCAN, "I/O Intr")
+#}
+
+
+#record(ai, "$(P)Det2:sDose") {
+#   field (DESC, "Dose Det 2")
+#}
+
+record(stringin, "$(P)Det3:sString") {
+   field (DESC, "Data Det 3")
+   field (DTYP, "stream")
+#   field (PINI, "YES")
+   field (INP, "@dpu.proto get_data(3,0x41) $(PORT)")
+}
+
+record(stringin, "$(P)Det4:sString") {
+   field (DESC, "Data Det 4")
+   field (DTYP, "stream")
+#   field (PINI, "YES")
+   field (INP, "@dpu.proto get_data(4,0x41) $(PORT)")
+}
+
+record(seq, "$(P)Seq"){
+   field (DESC, "Data Det 2")
+   field (DTYP, "stream")
+   field (DOL1, "$(P)Det1:sString PP")
+   field (DOL2, "$(P)Det2:sString PP")
+   field (DOL3, "$(P)Det3:sString PP")
+   field (DOL4, "$(P)Det4:sString PP")
+   field (DLY2, "0.25")
+   field (DLY3, "0.25")
+   field (DLY4, "0.25")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
+}
