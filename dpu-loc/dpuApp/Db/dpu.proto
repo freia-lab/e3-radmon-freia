@@ -1,6 +1,9 @@
 # dpu.proto for DPU
 Terminator = 0x04;
 
+#REGEX substitution for exponent reading
+exp_regex = "%#+1/ /1/%#+1/K/1000/%#+1/M/1000000/%#+1/G/1000000000/%#+1/T/1000000000000/";
+
 get_data {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";
    in 0x01 "0\$1%#31s%*1<notsum>";
@@ -8,5 +11,5 @@ get_data {
 
 get_dose_rate {
 #   out  0x01 "000\$114ctr2" $2 "%1<notsum>";
-   in 0x01 "0\$10036%5f%*c%(EGU)#5s" $2 "%*ca%*c%*c%(\$3)5f%*c%(\$3.EGU)#3s" "%*1<notsum>";
+   in 0x01 "0\$10036%5f" $exp_regex "%(\$4Exp)i%(\$4.EGU)#5s" $2 "%*ca%*c%*c%(\$3M)5f" $exp_regex "%(\$3Exp)i%(\$3.EGU)#3s" "%*1<notsum>";
 }

@@ -1,79 +1,74 @@
-#record(waveform, "$(P)InData") {
-#   field (DESC, "Unsolicited data")
-#   field (DTYP, "stream")
-#   field (INP, "@dpu.proto get_data $(PORT)")
-#   field (FTVL, "CHAR")
-#   field (NELM, "100")
-#   field (PINI, "YES")
-#   field (SCAN, "I/O Intr")
-#}
-
-record(stringin, "$(P)Det1:sString") {
-   field (DESC, "Data Det 1")
-   field (DTYP, "stream")
-   field (INP, "@dpu.proto get_data(1,0x41) $(PORT)")
-#   field (PINI, "YES")
-#   field (SCAN, "1 second")
-}
-
-#record(ai, "$(P)Det1:sRate") {
-#   field (DESC, "Rate Det 1")
- #  field (DTYP, "stream")
-  # field (INP, "@dpu.proto get_dose_rate(1,0x41,$(P)Det1:sDose) $(PORT)")
-   #field (PINI, "YES")
-   #field (SCAN, "I/O Intr")
-#}
-
-
-#record(ai, "$(P)Det1:sDose") {
-#   field (DESC, "Dose Det 1")
-#   field (PINI, "YES")
-#   field (SCAN, "1 second")
-#}
-
-record(stringin, "$(P)Det2:sString") {
-   field (DESC, "Data Det 2")
-   field (DTYP, "stream")
-   field (INP, "@dpu.proto get_data(2,0x41) $(PORT)")
-#   field (PINI, "YES")
-#   field (SCAN, "2 second")
-}
-
-#record(ai, "$(P)Det2:sRate") {
- #  field (DESC, "Rate Det 2")
-  # field (DTYP, "stream")
-   #field (INP, "@dpu.proto get_dose_rate(2,0x41,$(P)Det2:sDose) $(PORT)")
-   #field (SCAN, "I/O Intr")
-#}
-
-
-#record(ai, "$(P)Det2:sDose") {
-#   field (DESC, "Dose Det 2")
-#}
-
-record(stringin, "$(P)Det3:sString") {
-   field (DESC, "Data Det 3")
-   field (DTYP, "stream")
-#   field (PINI, "YES")
-   field (INP, "@dpu.proto get_data(3,0x41) $(PORT)")
-}
-
-record(stringin, "$(P)Det4:sString") {
-   field (DESC, "Data Det 4")
-   field (DTYP, "stream")
-#   field (PINI, "YES")
-   field (INP, "@dpu.proto get_data(4,0x41) $(PORT)")
-}
-
 record(seq, "$(P)Seq"){
    field (DESC, "Data Det 2")
-   field (DOL1, "$(P)Det1:sString PP")
-   field (DOL2, "$(P)Det2:sString PP")
-   field (DOL3, "$(P)Det3:sString PP")
-   field (DOL4, "$(P)Det4:sString PP")
+   field (DOL1, "$(P)$(DET1):sString PP")
+   field (DOL2, "$(P)$(DET2):sString PP")
+   field (DOL3, "$(P)$(DET3):sString PP")
+   field (DOL4, "$(P)$(DET4):sString PP")
    field (DLY2, "0.25")
    field (DLY3, "0.25")
    field (DLY4, "0.25")
    field (PINI, "YES")
    field (SCAN, "1 second")
 }
+
+record(stringin, "$(P)$(DET1):sString") {
+   field (DESC, "Data Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data(1,0x41) $(PORT)")
+}
+
+record(ai, "$(P)$(DET1):sDoseRtM") {
+   field (DESC, "Dose rate mantissa")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_dose_rate(1,0x41,$(P)$(DET1):sAccDose,$(P)$(DET1):sDoseRt) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(DET1):sDoseRtExp") {
+   field (DESC, "Dose rate exp")
+   field (FLNK, "$(P)$(DET1):sDoseRt")
+}
+
+record(calc, "$(P)$(DET1):sDoseRt") {
+   field (DESC, "Dose rate")
+   field (INPA, "$(P)$(DET1):sDoseRtM")
+   field (INPB, "$(P)$(DET1):sDoseRtExp")
+   field (CALC, "A*B")
+}
+
+record(ai, "$(P)$(DET1):sAccDoseM") {
+   field (DESC, "Dose Det 1")
+}
+
+record(ai, "$(P)$(DET1):sAccDoseExp") {
+   field (DESC, "Dose Det 1 Exp")
+   field (FLNK, "$(P)$(DET1):sAccDose")
+}
+
+record(calc, "$(P)$(DET1):sAccDose") {
+   field (DESC, "Dose rate")
+   field (INPA, "$(P)$(DET1):sAccDoseM")
+   field (INPB, "$(P)$(DET1):sAccDoseExp")
+   field (CALC, "A*B")
+}
+
+record(stringin, "$(P)$(DET2):sString") {
+   field (DESC, "Data Det 2")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data(2,0x41) $(PORT)")
+}
+
+
+record(stringin, "$(P)$(DET3):sString") {
+   field (DESC, "Data Det 3")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data(3,0x41) $(PORT)")
+}
+
+record(stringin, "$(P)$(DET4):sString") {
+   field (DESC, "Data Det 4")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data(4,0x41) $(PORT)")
+}
+
+
