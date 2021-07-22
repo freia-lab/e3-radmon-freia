@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>dpu freia top</name>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <PREFIX>RadProtFr-Bunker1:GD-01:</PREFIX>
+    </macros>
+    <file>Embedded/dpu_template.bob</file>
+    <x>70</x>
+    <y>50</y>
+    <width>550</width>
+    <height>200</height>
+    <resize>2</resize>
+  </widget>
+</display>

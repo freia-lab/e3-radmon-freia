@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>dpu freia temp</name>
+  <width>550</width>
+  <height>200</height>
+  <widget type="group" version="2.0.0">
+    <name>Group_4</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sAccDose</PV_NAME>
+    </macros>
+    <x>30</x>
+    <y>90</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_31</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_32</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_5</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sDoseRt</PV_NAME>
+    </macros>
+    <x>30</x>
+    <y>130</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_33</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_34</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_6</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sString</PV_NAME>
+    </macros>
+    <x>30</x>
+    <y>20</y>
+    <width>467</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_47</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>251</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_48</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>277</x>
+      <width>190</width>
+    </widget>
+  </widget>
+</display>

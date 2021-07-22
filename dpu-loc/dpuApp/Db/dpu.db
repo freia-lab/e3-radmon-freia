@@ -34,6 +34,7 @@ record(calc, "$(P)$(DET1):sDoseRt") {
    field (INPA, "$(P)$(DET1):sDoseRtM")
    field (INPB, "$(P)$(DET1):sDoseRtExp")
    field (CALC, "A*B")
+   field (PREC, "2")
 }
 
 record(ai, "$(P)$(DET1):sAccDoseM") {
@@ -46,10 +47,11 @@ record(ai, "$(P)$(DET1):sAccDoseExp") {
 }
 
 record(calc, "$(P)$(DET1):sAccDose") {
-   field (DESC, "Dose rate")
+   field (DESC, "Accumulated dose")
    field (INPA, "$(P)$(DET1):sAccDoseM")
    field (INPB, "$(P)$(DET1):sAccDoseExp")
    field (CALC, "A*B")
+   field (PREC, "2")
 }
 
 record(stringin, "$(P)$(DET2):sString") {
