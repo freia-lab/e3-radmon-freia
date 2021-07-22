@@ -67,7 +67,6 @@ record(stringin, "$(P)Det4:sString") {
 
 record(seq, "$(P)Seq"){
    field (DESC, "Data Det 2")
-   field (DTYP, "stream")
    field (DOL1, "$(P)Det1:sString PP")
    field (DOL2, "$(P)Det2:sString PP")
    field (DOL3, "$(P)Det3:sString PP")
