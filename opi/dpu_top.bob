@@ -4,7 +4,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <macros>
-      <PREFIX>RadProtFr-Bunker1:GD-01:</PREFIX>
+      <PREFIX>RadProtFr-Office:GD-01:</PREFIX>
     </macros>
     <file>Embedded/dpu_template.bob</file>
     <x>70</x>

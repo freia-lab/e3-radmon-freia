@@ -20,7 +20,7 @@ record(stringin, "$(P)$(DET1):sString") {
 record(ai, "$(P)$(DET1):sDoseRtM") {
    field (DESC, "Dose rate mantissa")
    field (DTYP, "stream")
-   field (INP, "@dpu.proto get_dose_rate(1,0x41,$(P)$(DET1):sAccDose,$(P)$(DET1):sDoseRt) $(PORT)")
+   field (INP, "@dpu.proto get_dr(1,0x41,$(DET1)) $(PORT)")
    field (SCAN, "I/O Intr")
 }
 
@@ -35,6 +35,7 @@ record(calc, "$(P)$(DET1):sDoseRt") {
    field (INPB, "$(P)$(DET1):sDoseRtExp")
    field (CALC, "A*B")
    field (PREC, "2")
+   field (FLNK, "$(P)$(DET1):sDetTyp")
 }
 
 record(ai, "$(P)$(DET1):sAccDoseM") {
@@ -44,6 +45,22 @@ record(ai, "$(P)$(DET1):sAccDoseM") {
 record(ai, "$(P)$(DET1):sAccDoseExp") {
    field (DESC, "Dose Det 1 Exp")
    field (FLNK, "$(P)$(DET1):sAccDose")
+}
+
+record(mbbi, "$(P)$(DET1):sDetTyp") {
+   field (DESC, "Detector type")
+   field (ZRST, "No detector")
+   field (ONST, "pm10")
+   field (TWST, "pm11")
+   field (THST, "ic10")
+   field (FRST, "gm10")
+   field (FVST, "gm40")
+   field (SXST, "gm41")
+   field (SVST, "gm42")
+   field (EIST, "BF3")
+   field (NIST, "42-30H")
+   field (TEST, "UR")
+   field (ELST, "Berthold")
 }
 
 record(calc, "$(P)$(DET1):sAccDose") {
