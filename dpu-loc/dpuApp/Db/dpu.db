@@ -5,10 +5,12 @@ record(seq, "$(P)Seq"){
    field (DOL3, "$(P)$(DET3):sString PP")
    field (DOL4, "$(P)$(DET4):sString PP")
    field (DOL5, "$(P)$(DET1):sStringBG PP")
+   field (DOL6, "$(P)$(DET1):sStringThr PP")
    field (DLY2, "0.25")
    field (DLY3, "0.25")
    field (DLY4, "0.25")
    field (DLY5, "0.25")
+   field (DLY6, "0.25")
    field (PINI, "YES")
    field (SCAN, "2 second")
 }
@@ -41,7 +43,7 @@ record(calc, "$(P)$(DET1):sDoseRt") {
 }
 
 record(stringin, "$(P)$(DET1):sStringBG") {
-   field (DESC, "Data Det 1")
+   field (DESC, "Background Det 1")
    field (DTYP, "stream")
    field (INP, "@dpu.proto get_btv(1,0x39) $(PORT)")
 }
@@ -62,6 +64,32 @@ record(calc, "$(P)$(DET1):sBG") {
    field (DESC, "Background")
    field (INPA, "$(P)$(DET1):sBGM")
    field (INPB, "$(P)$(DET1):sBGExp")
+   field (CALC, "A*B")
+   field (PREC, "2")
+}
+
+record(stringin, "$(P)$(DET1):sStringThr") {
+   field (DESC, "Thr Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_btv(1,0x43) $(PORT)")
+}
+
+record(ai, "$(P)$(DET1):sThrM") {
+   field (DESC, "Threshold mantissa")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto read_bt(1,0x43,$(DET1),:sThr) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(DET1):sThrExp") {
+   field (DESC, "Threshold exp")
+   field (FLNK, "$(P)$(DET1):sThr")
+}
+
+record(calc, "$(P)$(DET1):sThr") {
+   field (DESC, "Threshold")
+   field (INPA, "$(P)$(DET1):sThrM")
+   field (INPB, "$(P)$(DET1):sThrExp")
    field (CALC, "A*B")
    field (PREC, "2")
 }

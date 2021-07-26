@@ -148,4 +148,28 @@
       <x>285</x>
     </widget>
   </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_9</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sThr</PV_NAME>
+    </macros>
+    <x>30</x>
+    <y>250</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_53</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_54</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
+  </widget>
 </display>
