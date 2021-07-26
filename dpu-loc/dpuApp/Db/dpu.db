@@ -4,11 +4,13 @@ record(seq, "$(P)Seq"){
    field (DOL2, "$(P)$(DET2):sString PP")
    field (DOL3, "$(P)$(DET3):sString PP")
    field (DOL4, "$(P)$(DET4):sString PP")
+   field (DOL5, "$(P)$(DET1):sStringBG PP")
    field (DLY2, "0.25")
    field (DLY3, "0.25")
    field (DLY4, "0.25")
+   field (DLY5, "0.25")
    field (PINI, "YES")
-   field (SCAN, "1 second")
+   field (SCAN, "2 second")
 }
 
 record(stringin, "$(P)$(DET1):sString") {
@@ -38,6 +40,32 @@ record(calc, "$(P)$(DET1):sDoseRt") {
    field (FLNK, "$(P)$(DET1):sDetTyp")
 }
 
+record(stringin, "$(P)$(DET1):sStringBG") {
+   field (DESC, "Data Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_btv(1,0x39) $(PORT)")
+}
+
+record(ai, "$(P)$(DET1):sBGM") {
+   field (DESC, "Background mantissa")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto read_bt(1,0x39,$(DET1),:sBG) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(DET1):sBGExp") {
+   field (DESC, "Background exp")
+   field (FLNK, "$(P)$(DET1):sBG")
+}
+
+record(calc, "$(P)$(DET1):sBG") {
+   field (DESC, "Background")
+   field (INPA, "$(P)$(DET1):sBGM")
+   field (INPB, "$(P)$(DET1):sBGExp")
+   field (CALC, "A*B")
+   field (PREC, "2")
+}
+
 record(ai, "$(P)$(DET1):sAccDoseM") {
    field (DESC, "Dose Det 1")
 }
@@ -61,6 +89,18 @@ record(mbbi, "$(P)$(DET1):sDetTyp") {
    field (NIST, "42-30H")
    field (TEST, "UR")
    field (ELST, "Berthold")
+}
+
+record(bi, "$(P)$(DET1):sOVF") {
+   field (DESC, "1 = OVF")
+   field (ZNAM, "OK")
+   field (ONAM, "OVF")
+}
+
+record(mbbi, "$(P)$(DET1):sFail") {
+   field (DESC, "4 = FAIL_FLG ")
+   field (ZRST, "OK")
+   field (FRST, "FAIL_FLG")
 }
 
 record(calc, "$(P)$(DET1):sAccDose") {

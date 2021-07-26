@@ -15,17 +15,34 @@ DOSERT = ":sDoseRt";
 
 DT= ":sDetTyp";
 
+OVF = ":sOVF";
 
+FAIL = ":sFail";
+
+BG = ":sBG";
+
+THR = ":sThr";
 
 get_data {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";
 #   in 0x01 $unit_regex "0\$1%#s";
    in 0x01 "0\$1%#31s%*1<notsum>";
+#   in 0x01 "0\$1%#s";
 }
 
+get_btv {
+   out  0x01 "000\$114ctr2" $2 "%1<notsum>";
+   in 0x01 "0\$1%#20s%*1<notsum>";
+}
+
+read_bt {
+#   in 0x01 "0\$10025%5f" $exp_regex "%(" $P "\$3\$4" "Exp)i%(" $P "\$3\$4" ".EGU)#5s" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%*1<notsum>";
+   in 0x01 "0\$10025%5f" $exp_regex "%(" $P "\$3\$4" "Exp)i%(" $P "\$3\$4" ".EGU)5c" $2 "%*1ia%*1i%*1i%*1<notsum>";
+}
+
+#what to add after dollar signs? sBG, sThr, but from proto call in db
+
 get_dr {
-#   out  0x01 "000\$114ctr2" $2 "%1<notsum>";
-#   in 0x01 "0\$10036%5f" $exp_regex "%(" $P "\$3" $DOSERT "Exp)i%(" $P "\$3" $DOSERT ".EGU)#5s" $2 "%*ca%*c%*c%(" $P "\$3" $DOSE "M)5f" $exp_regex "%(" $P "\$3" $DOSE "Exp)i%(" $P "\$3" $DOSE".EGU)#3s%*1<notsum>";
-   in 0x01 "0\$10036%5f" $exp_regex "%(" $P "\$3" $DOSERT "Exp)i%(" $P "\$3" $DOSERT ".EGU)#5s" $2 "%("$P "\$3" $DT")ia%*c%*c%(" $P "\$3" $DOSE "M)5f" $exp_regex "%(" $P "\$3" $DOSE "Exp)i%(" $P "\$3" $DOSE".EGU)#3s%*s";
+   in 0x01 "0\$10036%5f" $exp_regex "%(" $P "\$3" $DOSERT "Exp)i%(" $P "\$3" $DOSERT ".EGU)5c" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%(" $P "\$3" $DOSE "M)5f" $exp_regex "%(" $P "\$3" $DOSE "Exp)i%(" $P "\$3" $DOSE".EGU)5c%*s";
 
 }
