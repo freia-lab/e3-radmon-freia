@@ -23,6 +23,13 @@ record(stringin, "$(P)$(DET1):sString") {
    field (INP, "@dpu.proto get_data(1,0x41) $(PORT)")
 }
 
+record(stringin, "$(P)$(DET1):sString1") {
+   field (DESC, "Data Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data1(1,0x41) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
+
 record(ai, "$(P)$(DET1):sDoseRtM") {
    field (DESC, "Dose rate mantissa")
    field (DTYP, "stream")

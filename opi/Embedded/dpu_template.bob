@@ -56,10 +56,10 @@
     <macros>
       <PV_NAME>$(PREFIX)sString</PV_NAME>
     </macros>
-    <x>30</x>
+    <x>40</x>
     <y>20</y>
     <width>710</width>
-    <height>22</height>
+    <height>60</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
@@ -73,6 +73,13 @@
       <name>Text Update_48</name>
       <pv_name>$(PV_NAME)</pv_name>
       <x>277</x>
+      <width>363</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_55</name>
+      <pv_name>$(PV_NAME)1</pv_name>
+      <x>277</x>
+      <y>20</y>
       <width>363</width>
     </widget>
   </widget>
