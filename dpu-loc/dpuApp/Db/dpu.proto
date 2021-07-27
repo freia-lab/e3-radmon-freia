@@ -27,14 +27,29 @@ get_data {
 #   in 0x01 "0\$1%#s";
 }
 
+get_stat {
+   out  0x01 "000\$114ctr2" $2 "%1<notsum>";
+   in 0x01 "0\$1%14c%*1<notsum>";
+}
+
+
 get_btv {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";
    in 0x01 "0\$1%15c" $2 "%*4c%*1<notsum>";
 }
 
 read_bt {
-   in 0x01 "0\$10025%5f" $exp_regex "%(" $P "\$3\$4" "Exp)i%(" $P "\$3\$4" ".EGU)5c" $2 "%*s";
+   in 0x01 "0\$10025%5f" $exp_regex "%(" $P "\$3\$4" "Exp)i%(" $P "\$3\$4" ".EGU)5c" $2 "%*5c";
+#   in 0x01 "0\$10025%5f%*6c" $2 "%*5c";   
 }
+
+#read_bg {
+#   in 0x01 "0\$10025%5f%*6c9%*5c";   
+#}
+
+#read_thr {
+#   in 0x01 "0\$10025%5f%*6cC%*5c";   
+#}
 
 
 get_dr {
