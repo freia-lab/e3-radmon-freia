@@ -58,8 +58,8 @@
     </macros>
     <x>40</x>
     <y>20</y>
-    <width>710</width>
-    <height>60</height>
+    <width>640</width>
+    <height>20</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
@@ -170,6 +170,56 @@
       <name>Text Update_54</name>
       <pv_name>$(PV_NAME)</pv_name>
       <x>285</x>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_10</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sStringThr2_1</PV_NAME>
+    </macros>
+    <x>40</x>
+    <y>42</y>
+    <width>640</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_55</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>251</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_56</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>277</x>
+      <width>363</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_11</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sStringThr2_2</PV_NAME>
+    </macros>
+    <x>40</x>
+    <y>62</y>
+    <width>640</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_57</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>251</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_58</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>277</x>
+      <width>363</width>
     </widget>
   </widget>
 </display>
