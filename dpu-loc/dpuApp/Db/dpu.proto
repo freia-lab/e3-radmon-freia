@@ -26,16 +26,6 @@ get_data {
    in 0x01 "0\$1%#31s%*1<notsum>";
 #   in 0x01 "0\$1%#s";
 }
-get_data1 {
-   in 0x01 "0\$1" $unit_regex "%#s";
-#   in 0x01 "0\$1%#s";
-}
-
-get_stat {
-   out  0x01 "000\$114ctr2" $2 "%1<notsum>";
-   in 0x01 "0\$1%14c%*1<notsum>";
-}
-
 
 get_btv {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";

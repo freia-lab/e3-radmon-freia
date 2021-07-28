@@ -1,0 +1,42 @@
+oldpc-04-30500 > dbpr RadProtFr-Office:GD-01:sBGM 2
+ACKS: NO_ALARM      ACKT: YES           ADEL: 0             AFTC: 0             
+AOFF: 0             ASG :               ASLO: 1             BKPT: 00            
+DESC: Background mantissa               DISA: 0             DISP: 0             
+DISS: NO_ALARM      DISV: 1             DTYP: stream        EGU :               
+EGUF: 0             EGUL: 0             EOFF: 0             ESLO: 1             
+EVNT:               FLNK: CONSTANT      HHSV: NO_ALARM      HIGH: 0             
+HIHI: 0             HOPR: 0             HSV : NO_ALARM      HYST: 0             
+INP : INST_IO @dpu.proto read_bt(1,0x39,Office:GD-01,:sBG) PORT1                
+LCNT: 0             LINR: NO CONVERSION LLSV: NO_ALARM      LOLO: 0             
+LOPR: 0             LOW : 0             LSV : NO_ALARM      MDEL: 0             
+NAME: RadProtFr-Office:GD-01:sBGM       NSEV: NO_ALARM      NSTA: NO_ALARM      
+PACT: 0             PHAS: 0             PINI: NO            PREC: 0             
+PRIO: LOW           PUTF: 0             ROFF: 0             RPRO: 0             
+RVAL: 0             SCAN: I/O Intr      SDIS: CONSTANT      SDLY: -1            
+SEVR: NO_ALARM      SIML: CONSTANT      SIMM: NO            SIMS: NO_ALARM      
+SIOL: CONSTANT      SMOO: 0             SSCN: <nil>         STAT: NO_ALARM      
+SVAL: 0             TIME: 2021-07-28 09:33:15.542496533     TPRO: 0             
+TSE : 0             TSEL: CONSTANT      UDF : 0             UDFS: INVALID       
+VAL : 3             
+oldpc-04-30500 > dbpr RadProtFr-Office:GD-01:sBGM 2
+ACKS: NO_ALARM      ACKT: YES           ADEL: 0             AFTC: 0             
+AOFF: 0             ASG :               ASLO: 1             BKPT: 00            
+DESC: Background mantissa               DISA: 0             DISP: 0             
+DISS: NO_ALARM      DISV: 1             DTYP: stream        EGU :               
+EGUF: 0             EGUL: 0             EOFF: 0             ESLO: 1             
+EVNT:               FLNK: CONSTANT      HHSV: NO_ALARM      HIGH: 0             
+HIHI: 0             HOPR: 0             HSV : NO_ALARM      HYST: 0             
+INP : INST_IO @dpu.proto read_bt(1,0x39,Office:GD-01,:sBG) PORT1                
+LCNT: 0             LINR: NO CONVERSION LLSV: NO_ALARM      LOLO: 0             
+LOPR: 0             LOW : 0             LSV : NO_ALARM      MDEL: 0             
+NAME: RadProtFr-Office:GD-01:sBGM       NSEV: NO_ALARM      NSTA: NO_ALARM      
+PACT: 0             PHAS: 0             PINI: NO            PREC: 0             
+PRIO: LOW           PUTF: 0             ROFF: 0             RPRO: 0             
+RVAL: 0             SCAN: I/O Intr      SDIS: CONSTANT      SDLY: -1            
+SEVR: NO_ALARM      SIML: CONSTANT      SIMM: NO            SIMS: NO_ALARM      
+SIOL: CONSTANT      SMOO: 0             SSCN: <nil>         STAT: NO_ALARM      
+SVAL: 0             TIME: 2021-07-28 09:33:15.542496533     TPRO: 0             
+TSE : 0             TSEL: CONSTANT      UDF : 0             UDFS: INVALID       
+VAL : 2             
+oldpc-04-30500 > dbpr RadProtFr-Office:GD-01:sBGM 2
+

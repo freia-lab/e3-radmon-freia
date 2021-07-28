@@ -75,13 +75,6 @@
       <x>277</x>
       <width>363</width>
     </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_55</name>
-      <pv_name>$(PV_NAME)1</pv_name>
-      <x>277</x>
-      <y>20</y>
-      <width>363</width>
-    </widget>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group_7</name>

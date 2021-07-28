@@ -6,13 +6,11 @@ record(seq, "$(P)Seq"){
    field (DOL4, "$(P)$(DET4):sString PP")
    field (DOL5, "$(P)$(DET1):sStringBG PP")
    field (DOL6, "$(P)$(DET1):sStringThr PP")
-   field (DOL7, "$(P)$(DET1):sStringStat PP")
    field (DLY2, "0.25")
    field (DLY3, "0.25")
    field (DLY4, "0.25")
    field (DLY5, "0.25")
    field (DLY6, "0.25")
-   field (DLY7, "0.25")
    field (PINI, "YES")
    field (SCAN, "2 second")
 }
@@ -23,12 +21,6 @@ record(stringin, "$(P)$(DET1):sString") {
    field (INP, "@dpu.proto get_data(1,0x41) $(PORT)")
 }
 
-record(stringin, "$(P)$(DET1):sString1") {
-   field (DESC, "Data Det 1")
-   field (DTYP, "stream")
-   field (INP, "@dpu.proto get_data1(1,0x41) $(PORT)")
-   field (SCAN, "I/O Intr")
-}
 
 record(ai, "$(P)$(DET1):sDoseRtM") {
    field (DESC, "Dose rate mantissa")
@@ -101,12 +93,6 @@ record(calc, "$(P)$(DET1):sThr") {
    field (INPB, "$(P)$(DET1):sThrExp")
    field (CALC, "A*B")
    field (PREC, "2")
-}
-
-record(stringin, "$(P)$(DET1):sStringStat") {
-   field (DESC, "Stat Det 1")
-   field (DTYP, "stream")
-   field (INP, "@dpu.proto get_stat(1,0x30) $(PORT)")
 }
 
 record(ai, "$(P)$(DET1):sAccDoseM") {
