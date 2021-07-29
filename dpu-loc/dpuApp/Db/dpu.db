@@ -54,11 +54,11 @@ record(ai, "$(P)$(DET1):sBGM") {
    field (DTYP, "stream")
    field (INP, "@dpu.proto read_bt(1,0x39,$(DET1),:sBG) $(PORT)")
    field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)$(DET1):sBG")
 }
 
 record(ai, "$(P)$(DET1):sBGExp") {
    field (DESC, "Background exp")
-   field (FLNK, "$(P)$(DET1):sBG")
 }
 
 record(calc, "$(P)$(DET1):sBG") {
@@ -75,27 +75,27 @@ record(stringin, "$(P)$(DET1):sStringThr") {
    field (INP, "@dpu.proto get_btv(1,0x43) $(PORT)")
 }
 
-record(stringin, "$(P)$(DET1):sStringThr2_1") {
-   field (DESC, "String before req")
+record(ai, "$(P)$(DET1):sStringThr2_1") {
+   field (DESC, "float before req")
    field (DTYP, "stream")
    field (INP, "@dpu.proto read_bt2(1,0x43,$(P)$(DET1):sStringThr2_2) $(PORT)")
    field (SCAN, "I/O Intr")
 }
 
-record(stringin, "$(P)$(DET1):sStringThr2_2") {
-   field (DESC, "String after req")
+record(ai, "$(P)$(DET1):sStringThr2_2") {
+   field (DESC, "checksum after req")
 }
 
-record(stringin, "$(P)$(DET1):sThrM") {
+record(ai, "$(P)$(DET1):sThrM") {
    field (DESC, "Threshold mantissa")
    field (DTYP, "stream")
    field (INP, "@dpu.proto read_bt(1,0x43,$(DET1),:sThr) $(PORT)")
    field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)$(DET1):sThr")
 }
 
 record(ai, "$(P)$(DET1):sThrExp") {
    field (DESC, "Threshold exp")
-   field (FLNK, "$(P)$(DET1):sThr")
 }
 
 record(calc, "$(P)$(DET1):sThr") {
