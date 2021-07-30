@@ -122,6 +122,23 @@ record(calc, "$(P)$(DET1):sThr") {
    field (PREC, "2")
 }
 
+record(ao, "$(P)$(DET1):ThrMcSetV") {
+   field (DESC, "Threshold set value")
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto set_bt(1,0) $(PORT)")
+
+}
+
+record(mbbo, "$(P)$(DET1):ThrExpcSetV") {
+   field (DESC, "Threshold set exponent")
+   field (ONST, "-1")
+   field (TWST, "-2")
+   field (THST, "-3")
+   field (FVST, "3")
+   field (SXST, "2")
+   field (SVST, "1")
+}
+
 record(ai, "$(P)$(DET1):sAccDoseM") {
    field (DESC, "Dose Det 1")
 }

@@ -8,8 +8,8 @@
     <macros>
       <PV_NAME>$(PREFIX)sAccDose</PV_NAME>
     </macros>
-    <x>30</x>
-    <y>90</y>
+    <x>40</x>
+    <y>60</y>
     <width>385</width>
     <height>22</height>
     <style>3</style>
@@ -32,8 +32,8 @@
     <macros>
       <PV_NAME>$(PREFIX)sDoseRt</PV_NAME>
     </macros>
-    <x>30</x>
-    <y>130</y>
+    <x>40</x>
+    <y>100</y>
     <width>385</width>
     <height>22</height>
     <style>3</style>
@@ -81,8 +81,8 @@
     <macros>
       <PV_NAME>$(PREFIX)sDetTyp</PV_NAME>
     </macros>
-    <x>30</x>
-    <y>170</y>
+    <x>40</x>
+    <y>140</y>
     <width>385</width>
     <height>22</height>
     <style>3</style>
@@ -103,8 +103,8 @@
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>$(PREFIX)sOVF</pv_name>
-    <x>430</x>
-    <y>95</y>
+    <x>440</x>
+    <y>65</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -115,8 +115,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
     <pv_name>$(PREFIX)sFail</pv_name>
-    <x>451</x>
-    <y>95</y>
+    <x>461</x>
+    <y>65</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -129,8 +129,8 @@
     <macros>
       <PV_NAME>$(PREFIX)sBG</PV_NAME>
     </macros>
-    <x>30</x>
-    <y>210</y>
+    <x>40</x>
+    <y>180</y>
     <width>385</width>
     <height>22</height>
     <style>3</style>
@@ -153,8 +153,8 @@
     <macros>
       <PV_NAME>$(PREFIX)sThr</PV_NAME>
     </macros>
-    <x>30</x>
-    <y>250</y>
+    <x>40</x>
+    <y>220</y>
     <width>385</width>
     <height>22</height>
     <style>3</style>
@@ -171,5 +171,42 @@
       <pv_name>$(PV_NAME)</pv_name>
       <x>285</x>
     </widget>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>loc://this</pv_name>
+    <x>150</x>
+    <y>257</y>
+    <width>70</width>
+    <precision>0</precision>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_59</name>
+    <pv_name>='loc://this'*'$(PREFIX)ThrExpcSetV'</pv_name>
+    <x>425</x>
+    <y>256</y>
+    <width>120</width>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_1</name>
+    <pv_name>$(PREFIX)ThrExpcSetV</pv_name>
+    <x>276</x>
+    <y>256</y>
+    <width>30</width>
+    <height>20</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>* 10 ^ </text>
+    <x>230</x>
+    <y>254</y>
+    <width>58</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Set threshold:</text>
+    <x>40</x>
+    <y>254</y>
+    <width>110</width>
   </widget>
 </display>

@@ -22,42 +22,21 @@ FAIL = ":sFail";
 
 get_data {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";
-#   in 0x01 $unit_regex "0\$1%#s";
    in 0x01 "0\$1%#31s%*1<notsum>";
-#   in 0x01 "0\$1%#s";
 }
 
 get_btv {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";
-#   in 0x01 "%#s";
-#   in 0x01 "0\$1%15c" $2 "%*4c%*1<notsum>";
    in 0x01 "0\$10025%5f%(" $P "\$3\$4" "Exp)1c%(" $P "\$3\$4" ".EGU)5c" $2 "%*4c%*1<notsum>";
 }
 
-read_bt {
-   in 0x01 "0\$10025%5f" $exp_regex "%(" $P "\$3\$4" "Exp)i%(" $P "\$3\$4" ".EGU)5c" $2 "%*5c";
-#   in 0x01 "0\$10025%5f%*6c" $2 "%*5c";   
+#$2 = 0 for Thr, 2 for BG
+
+set_bt {
+   out  0x01 "990\$1\$2" "1" "%5i%1<notsum>";
 }
-
-read_bt2  {
-
-   in 0x01 "0\$10025%5f%*6c" $2 "%*4c%(\$3)r";
-#   in 0x01 "0\$10025%5f%*6c" $2 "%*5c";
-}
-
-
-
-#read_bg {
-#   in 0x01 "0\$10025%5f%*6c9%*5c";   
-#}
-
-#read_thr {
-#   in 0x01 "0\$10025%5f%*6cC%*5c";   
-#}
-
 
 get_dr {
    in 0x01 "0\$10036%5f" $exp_regex "%(" $P "\$3" $DOSERT "Exp)i%(" $P "\$3" $DOSERT ".EGU)5c" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%(" $P "\$3" $DOSE "M)5f" $exp_regex "%(" $P "\$3" $DOSE "Exp)i%(" $P "\$3" $DOSE".EGU)5c%*s";
-
 }
 
