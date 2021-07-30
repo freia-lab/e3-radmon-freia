@@ -3,7 +3,7 @@ Terminator = 0x04;
 
 #REGEX substitution for exponent reading
 
-exp_regex = "%#+1/ /1/%#+1/K/1000/%#+1/M/1000000/%#+1/G/1000000000/%#+1/T/1000000000000/";
+exp_regex = "%#+1/ /0/%#+1/K/3/%#+1/M/6/%#+1/G/9/%#+1/T/12/";
 
 unit_regex = "%#/uSv/μSv/";
 
@@ -29,7 +29,9 @@ get_data {
 
 get_btv {
    out  0x01 "000\$114ctr2" $2 "%1<notsum>";
-   in 0x01 "0\$1%15c" $2 "%*4c%*1<notsum>";
+#   in 0x01 "%#s";
+#   in 0x01 "0\$1%15c" $2 "%*4c%*1<notsum>";
+   in 0x01 "0\$10025%5f%(" $P "\$3\$4" "Exp)1c%(" $P "\$3\$4" ".EGU)5c" $2 "%*4c%*1<notsum>";
 }
 
 read_bt {
@@ -59,4 +61,3 @@ get_dr {
 
 }
 
-#   read_bt in 0x01 "0\$10025%5f" $exp_regex "%(" $P "\$3\$4" "Exp)i%(" $P "\$3\$4" ".EGU)#5s" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%*1<notsum>";
