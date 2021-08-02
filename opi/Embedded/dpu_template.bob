@@ -174,25 +174,18 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
-    <pv_name>loc://this</pv_name>
+    <pv_name>$(PREFIX)ThrMcSetV</pv_name>
     <x>150</x>
     <y>257</y>
     <width>70</width>
     <precision>0</precision>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_59</name>
-    <pv_name>='loc://this'*'$(PREFIX)ThrExpcSetV'</pv_name>
-    <x>425</x>
-    <y>256</y>
-    <width>120</width>
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Combo Box_1</name>
     <pv_name>$(PREFIX)ThrExpcSetV</pv_name>
     <x>276</x>
     <y>256</y>
-    <width>30</width>
+    <width>55</width>
     <height>20</height>
   </widget>
   <widget type="label" version="2.0.0">
@@ -205,8 +198,38 @@
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>Set threshold:</text>
-    <x>40</x>
+    <x>36</x>
     <y>254</y>
+    <width>110</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>$(PREFIX)BGMcSetV</pv_name>
+    <x>150</x>
+    <y>282</y>
+    <width>70</width>
+    <precision>0</precision>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_2</name>
+    <pv_name>$(PREFIX)BGExpcSetV</pv_name>
+    <x>276</x>
+    <y>281</y>
+    <width>55</width>
+    <height>20</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>* 10 ^ </text>
+    <x>230</x>
+    <y>279</y>
+    <width>58</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Set background:</text>
+    <x>36</x>
+    <y>279</y>
     <width>110</width>
   </widget>
 </display>

@@ -30,13 +30,19 @@ get_btv {
    in 0x01 "0\$10025%5f%(" $P "\$3\$4" "Exp)1c%(" $P "\$3\$4" ".EGU)5c" $2 "%*4c%*1<notsum>";
 }
 
+read_btv {
+   in 0x01 "0\$10025%11c" $2 "%*5c"
+}
+
 #$2 = 0 for Thr, 2 for BG
 
 set_bt {
-   out  0x01 "990\$1\$2" "1" "%5i%1<notsum>";
+   out  0x01 "990\$1\$2" "%(\$3)1i" "%05i%1<notsum>";
 }
 
 get_dr {
-   in 0x01 "0\$10036%5f" $exp_regex "%(" $P "\$3" $DOSERT "Exp)i%(" $P "\$3" $DOSERT ".EGU)5c" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%(" $P "\$3" $DOSE "M)5f" $exp_regex "%(" $P "\$3" $DOSE "Exp)i%(" $P "\$3" $DOSE".EGU)5c%*s";
+#   in 0x01 "0\$10036%5f" $exp_regex "%(" $P "\$3" $DOSERT "Exp)i%(" $P "\$3" $DOSERT ".EGU)5c" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%(" $P "\$3" $DOSE "M)5f" $exp_regex "%(" $P "\$3" $DOSE "Exp)i%(" $P "\$3" $DOSE".EGU)5c%*s";
+
+   in 0x01 "0\$10036%5f" "%(" $P "\$3" $DOSERT "Exp)1c%(" $P "\$3" $DOSERT ".EGU)5c" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%(" $P "\$3" $DOSE "M)5f" "%(" $P "\$3" $DOSE "Exp)1c%(" $P "\$3" $DOSE".EGU)5c%*s";
 }
 

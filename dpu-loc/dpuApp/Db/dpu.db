@@ -27,11 +27,20 @@ record(ai, "$(P)$(DET1):sDoseRtM") {
    field (DTYP, "stream")
    field (INP, "@dpu.proto get_dr(1,0x41,$(DET1)) $(PORT)")
    field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)$(DET1):sDoseRt")
 }
 
-record(ai, "$(P)$(DET1):sDoseRtExp") {
+#record(ai, "$(P)$(DET1):sDoseRtExp") {
+#   field (DESC, "Dose rate exp")
+#}
+
+record(mbbi, "$(P)$(DET1):sDoseRtExp") {
    field (DESC, "Dose rate exp")
-   field (FLNK, "$(P)$(DET1):sDoseRt")
+   field (ZRST, " ")
+   field (THST, "K")
+   field (SXST, "M")
+   field (NIST, "G")
+   field (TVST, "T")
 }
 
 record(calc, "$(P)$(DET1):sDoseRt") {
@@ -43,11 +52,12 @@ record(calc, "$(P)$(DET1):sDoseRt") {
    field (FLNK, "$(P)$(DET1):sDetTyp")
 }
 
-#record(stringin, "$(P)$(DET1):sStringBG") {
-#   field (DESC, "Background Det 1")
-#   field (DTYP, "stream")
-#   field (INP, "@dpu.proto get_btv(1,0x39) $(PORT)")
-#}
+record(stringin, "$(P)$(DET1):sStringBG") {
+   field (DESC, "Background Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto read_btv(1,0x39) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
 
 record(ai, "$(P)$(DET1):sBGM") {
    field (DESC, "Background mantissa")
@@ -77,11 +87,28 @@ record(calc, "$(P)$(DET1):sBG") {
    field (PREC, "2")
 }
 
-#record(stringin, "$(P)$(DET1):sStringThr") {
-#   field (DESC, "Thr Det 1")
-#   field (DTYP, "stream")
-#   field (INP, "@dpu.proto get_btv(1,0x43) $(PORT)")
-#}
+record(ao, "$(P)$(DET1):BGMcSetV") {
+   field (DESC, "Threshold set value")
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto set_bt(1,2,$(P)$(DET1):BGExpcSetV) $(PORT)")
+}
+
+record(mbbo, "$(P)$(DET1):BGExpcSetV") {
+   field (DESC, "Background set exponent")
+   field (ONST, "-1")
+   field (TWST, "-2")
+   field (THST, "-3")
+   field (FVST, "3")
+   field (SXST, "2")
+   field (SVST, "1")
+}
+
+record(stringin, "$(P)$(DET1):sStringThr") {
+   field (DESC, "Thr Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto read_btv(1,0x43) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
 
 #record(ai, "$(P)$(DET1):sStringThr2_1") {
 #   field (DESC, "float before req")
@@ -125,8 +152,7 @@ record(calc, "$(P)$(DET1):sThr") {
 record(ao, "$(P)$(DET1):ThrMcSetV") {
    field (DESC, "Threshold set value")
    field (DTYP, "stream")
-   field (OUT, "@dpu.proto set_bt(1,0) $(PORT)")
-
+   field (OUT, "@dpu.proto set_bt(1,0,$(P)$(DET1):ThrExpcSetV) $(PORT)")
 }
 
 record(mbbo, "$(P)$(DET1):ThrExpcSetV") {
@@ -140,13 +166,25 @@ record(mbbo, "$(P)$(DET1):ThrExpcSetV") {
 }
 
 record(ai, "$(P)$(DET1):sAccDoseM") {
-   field (DESC, "Dose Det 1")
-}
-
-record(ai, "$(P)$(DET1):sAccDoseExp") {
-   field (DESC, "Dose Det 1 Exp")
+   field (DESC, "Dose Det 1")   
    field (FLNK, "$(P)$(DET1):sAccDose")
 }
+
+#record(ai, "$(P)$(DET1):sAccDoseExp") {
+#   field (DESC, "Dose Det 1 Exp")
+#   field (FLNK, "$(P)$(DET1):sAccDose")
+#}
+
+record(mbbi, "$(P)$(DET1):sAccDoseExp") {
+   field (DESC, "Background exp")
+   field (ZRST, " ")
+   field (THST, "K")
+   field (SXST, "M")
+   field (NIST, "G")
+   field (TVST, "T")
+}
+
+
 
 record(mbbi, "$(P)$(DET1):sDetTyp") {
    field (DESC, "Detector type")
