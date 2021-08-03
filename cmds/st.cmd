@@ -20,6 +20,7 @@ dbLoadRecords("dpu.db", "PORT=PORT1,P=RadProtFr-,DET1=Office:GD-01,DET2=Bunker1:
 
 asynSetTraceIOMask "PORT1",0,4   # Enable traceIOHex
 #asynSetTraceMask "PORT1",0,0x1f     # Enable traceError and traceIODriver
+#asynSetTraceMask "PORT1",0,0xfff     # Enable traceError and traceIODriver
 
 iocInit()
 

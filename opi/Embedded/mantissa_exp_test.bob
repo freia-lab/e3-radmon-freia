@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Mantissa exp test</name>
+  <width>250</width>
+  <height>100</height>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>loc://this1</pv_name>
+    <x>20</x>
+    <y>36</y>
+    <width>50</width>
+    <precision>0</precision>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text><![CDATA[/* Embedded javascript */
+importClass(org.csstudio.display.builder.runtime.script.PVUtil);
+importClass(org.csstudio.display.builder.runtime.script.ScriptUtil);
+//logger = ScriptUtil.getLogger();
+//logger.info("Hello");
+//widget.setPropertyValue("text", PVUtil.getString(pvs[0]));
+
+/* NEW CODE BEGINS HERE */
+
+var y = PVUtil.getDouble(pvs[0]);
+var exp = Math.floor(Math.log10(y));
+var sig = y/Math.pow(10,exp);
+
+//Max is 9 900 *10^3, i.e 9.9e6
+
+if (y>60000) {
+
+   sig=Math.round(y/1000);
+   exp = 3;
+
+} else if (y>=1000) {
+
+   sig=Math.round(y);
+   exp = 0;
+
+} else if (y>=100) {
+
+   sig=Math.round(y*10);
+   exp = -1;
+
+} else if (y>=10) {
+
+   sig=Math.round(y*100);
+   exp = -2;
+
+} else  {
+
+   sig=Math.round(y*1000);
+   exp = -3;
+
+}
+
+//WRITE TO PVs ONCE EXP AND SIG HAVE BEEN DETERMINED
+
+PVUtil.writePV("loc://exp", exp, 2000);
+PVUtil.writePV("loc://sig",sig, 2000);
+
+]]></text>
+        <pv_name>$(pv_name)</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_61</name>
+    <pv_name>loc://exp</pv_name>
+    <x>116</x>
+    <y>20</y>
+    <width>60</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_62</name>
+    <pv_name>loc://sig</pv_name>
+    <x>116</x>
+    <y>50</y>
+    <width>60</width>
+  </widget>
+</display>
