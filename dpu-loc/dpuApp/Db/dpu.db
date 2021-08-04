@@ -243,4 +243,12 @@ record(stringin, "$(P)$(DET4):sString") {
    field (INP, "@dpu.proto get_data(4,0x41) $(PORT)")
 }
 
+record(aSub, "$(P)$(DET1):subTest") {
+   field(SNAM,"my_sub_test")
+   field(FTA, "FLOAT")
+   field(NOA, "1")
+   field(INPA, "20.2")
+   field(FTVA, "DOUBLE")
+   field(PINI, "YES")
+}
 
