@@ -81,6 +81,8 @@ TEMPLATES += $(wildcard $(APPDB)/*.proto)
 # TEMPLATES += $(wildcard $(APPDB)/*.template)
 
 
+
+
 # DBDINC_SRCS += $(APPSRC)/swaitRecord.c
 # DBDINC_SRCS += $(APPSRC)/sseqRecord.c
 # DBDINC_SRCS += $(APPSRC)/aCalcoutRecord.c
@@ -114,6 +116,11 @@ TEMPLATES += $(wildcard $(APPDB)/*.proto)
 # SOURCES += $(APPSRC)/aCalcMonitorMem.c
 # # DBDINC_SRCS should be last of the series of SOURCES
 # SOURCES += $(DBDINC_SRCS)
+
+SOURCES += $(APPSRC)/my_sub_test.c
+
+DBDS += $(APPSRC)/subroutine.dbd
+
 
 # DBDS += $(APPSRC)/calcSupport_LOCAL.dbd
 # DBDS += $(APPSRC)/calcSupport_withSNCSEQ.dbd
