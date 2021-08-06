@@ -117,7 +117,7 @@ TEMPLATES += $(wildcard $(APPDB)/*.proto)
 # # DBDINC_SRCS should be last of the series of SOURCES
 # SOURCES += $(DBDINC_SRCS)
 
-SOURCES += $(APPSRC)/my_sub_test.c
+SOURCES += $(APPSRC)/man_exp.c
 
 DBDS += $(APPSRC)/subroutine.dbd
 

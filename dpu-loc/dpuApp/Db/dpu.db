@@ -144,6 +144,7 @@ record(mbbi, "$(P)$(DET1):sThrExp") {
 
 record(calc, "$(P)$(DET1):sThr") {
    field (DESC, "Threshold")
+   field (PINI, "YES")
    field (INPA, "$(P)$(DET1):sThrM")
    field (INPB, "$(P)$(DET1):sThrExp")
    field (CALC, "A*10^B")
@@ -151,20 +152,41 @@ record(calc, "$(P)$(DET1):sThr") {
 }
 
 record(ao, "$(P)$(DET1):ThrMcSetV") {
-   field (DESC, "Threshold set value")
+   field (DESC, "Threshold set mantissa")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bt(1,0,$(P)$(DET1):ThrExpcSetV) $(PORT)")
 }
 
-record(mbbo, "$(P)$(DET1):ThrExpcSetV") {
+#record(mbbo, "$(P)$(DET1):ThrExpcSetV") {
+#   field (DESC, "Threshold set exponent")
+#   field (FLNK, "$(P)$(DET1):ThrMcSetV")
+#   field (ONST, "-1")
+#   field (TWST, "-2")
+#   field (THST, "-3")
+#   field (FRST, "0")
+#   field (FVST, "3")
+#   field (SXST, "2")
+#   field (SVST, "1")
+#}
+
+record(ao, "$(P)$(DET1):ThrExpcSetV"){
    field (DESC, "Threshold set exponent")
-   field (ONST, "-1")
-   field (TWST, "-2")
-   field (THST, "-3")
-   field (FRST, "0")
-   field (FVST, "3")
-   field (SXST, "2")
-   field (SVST, "1")
+   field (FLNK, "$(P)$(DET1):ThrMcSetV")
+}
+
+record(ao, "$(P)$(DET1):ThrcSetV"){
+   field (DESC, "Threshold set value")
+   field (FLNK, "$(P)$(DET1):ThrSub")
+   field (PREC, "2")
+}
+
+record(aSub, "$(P)$(DET1):ThrSub") {
+   field(SNAM,"man_exp_fun")
+   field(INPA, "$(P)$(DET1):ThrcSetV")
+   field(OUTA, "$(P)$(DET1):ThrMcSetV")
+   field(OUTB, "$(P)$(DET1):ThrExpcSetV PP")
+   field(FTVA, "DOUBLE")
+   field(FTVB, "DOUBLE")
 }
 
 record(ai, "$(P)$(DET1):sAccDoseM") {
@@ -243,13 +265,6 @@ record(stringin, "$(P)$(DET4):sString") {
    field (INP, "@dpu.proto get_data(4,0x41) $(PORT)")
 }
 
-record(aSub, "$(P)$(DET1):subTest") {
-   field(SNAM,"my_sub_test")
-   #field(FTA, "FLOAT")
-   field(NOA, "1")
-   field(INPA, "20.2")
-   #field(FTVA, "FLOAT")
-   field(PINI, "YES")
-   field(SCAN, "1 second")
-}
+
+
 

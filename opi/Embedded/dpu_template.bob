@@ -174,62 +174,62 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
-    <pv_name>$(PREFIX)ThrMcSetV</pv_name>
-    <x>150</x>
-    <y>257</y>
+    <pv_name>$(PREFIX)ThrcSetV</pv_name>
+    <x>154</x>
+    <y>263</y>
     <width>70</width>
-    <precision>0</precision>
+    <precision></precision>
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Combo Box_1</name>
     <pv_name>$(PREFIX)ThrExpcSetV</pv_name>
-    <x>276</x>
-    <y>256</y>
+    <x>280</x>
+    <y>342</y>
     <width>55</width>
     <height>20</height>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>* 10 ^ </text>
-    <x>230</x>
-    <y>254</y>
+    <x>234</x>
+    <y>340</y>
     <width>58</width>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>Set threshold:</text>
-    <x>36</x>
-    <y>254</y>
+    <x>40</x>
+    <y>260</y>
     <width>110</width>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_1</name>
     <pv_name>$(PREFIX)BGMcSetV</pv_name>
-    <x>150</x>
-    <y>282</y>
+    <x>154</x>
+    <y>368</y>
     <width>70</width>
     <precision>0</precision>
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Combo Box_2</name>
     <pv_name>$(PREFIX)BGExpcSetV</pv_name>
-    <x>276</x>
-    <y>281</y>
+    <x>280</x>
+    <y>367</y>
     <width>55</width>
     <height>20</height>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
     <text>* 10 ^ </text>
-    <x>230</x>
-    <y>279</y>
+    <x>234</x>
+    <y>365</y>
     <width>58</width>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_3</name>
     <text>Set background:</text>
-    <x>36</x>
-    <y>279</y>
+    <x>40</x>
+    <y>365</y>
     <width>110</width>
   </widget>
 </display>
