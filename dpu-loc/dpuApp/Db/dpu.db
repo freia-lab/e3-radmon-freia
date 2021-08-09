@@ -74,6 +74,7 @@ record(mbbi, "$(P)$(DET1):sBGExp") {
    field (DESC, "Background exp")
    field (ZRST, " ")
    field (THST, "K")
+   field (FVST, "s")
    field (SXST, "M")
    field (NIST, "G")
    field (TVST, "T")
@@ -83,26 +84,28 @@ record(calc, "$(P)$(DET1):sBG") {
    field (DESC, "Background")
    field (INPA, "$(P)$(DET1):sBGM")
    field (INPB, "$(P)$(DET1):sBGExp")
-   field (CALC, "A*10^B")
+   field (CALC, "(B=5) ? VAL : A*10^B")
    field (PREC, "2")
 }
 
-record(ao, "$(P)$(DET1):BGMcSetV") {
+record(ao, "$(P)$(DET1):BGcSetV") {
    field (DESC, "Threshold set value")
    field (DTYP, "stream")
-   field (OUT, "@dpu.proto set_bt(1,2,$(P)$(DET1):BGExpcSetV) $(PORT)")
+   field (OUT, "@dpu.proto set_bg(1,2) $(PORT)")
+   field (DRVH, "62000")
+   field (DRVL, "1")
 }
 
-record(mbbo, "$(P)$(DET1):BGExpcSetV") {
-   field (DESC, "Background set exponent")
-   field (ONST, "-1")
-   field (TWST, "-2")
-   field (THST, "-3")
-   field (FRST, "0")
-   field (FVST, "3")
-   field (SXST, "2")
-   field (SVST, "1")
-}
+#record(mbbo, "$(P)$(DET1):BGExpcSetV") {
+#   field (DESC, "Background set exponent")
+#   field (ONST, "-1")
+#   field (TWST, "-2")
+#   field (THST, "-3")
+#   field (FRST, "0")
+#   field (FVST, "3")
+#   field (SXST, "2")
+#   field (SVST, "1")
+#}
 
 record(stringin, "$(P)$(DET1):sStringThr") {
    field (DESC, "Thr Det 1")
@@ -154,7 +157,7 @@ record(calc, "$(P)$(DET1):sThr") {
 record(ao, "$(P)$(DET1):ThrMcSetV") {
    field (DESC, "Threshold set mantissa")
    field (DTYP, "stream")
-   field (OUT, "@dpu.proto set_bt(1,0,$(P)$(DET1):ThrExpcSetV) $(PORT)")
+   field (OUT, "@dpu.proto set_thr(1,0,$(P)$(DET1):ThrExpcSetV) $(PORT)")
 }
 
 #record(mbbo, "$(P)$(DET1):ThrExpcSetV") {

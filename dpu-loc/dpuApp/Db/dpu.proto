@@ -36,8 +36,16 @@ read_btv {
 
 #$2 = 0 for Thr, 2 for BG
 
-set_bt {
+set_thr {
    out  0x01 "990\$1\$2" "%(\$3)1i" "%05i%1<notsum>";
+   in 0x01 "%*#s";
+}
+
+#set_bg: "4" represents 1e0.
+
+set_bg {
+   out  0x01 "990\$1\$2" "4" "%05i%1<notsum>";
+   in 0x01 "%*#s";
 }
 
 get_dr {
