@@ -34,6 +34,11 @@ read_btv {
    in 0x01 "0\$10025%11c" $2 "%*5c"
 }
 
+clr_dos {
+   out  0x01 "990\$100" 0x2D "0001%1<notsum>";
+   in 0x01 "%*#s";
+}
+
 #$2 = 0 for Thr, 2 for BG
 
 set_thr {
