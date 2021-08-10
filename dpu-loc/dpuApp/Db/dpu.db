@@ -14,6 +14,7 @@ record(seq, "$(P)Seq"){
    field (DLY5, "0.25")
    field (DLY6, "0.25")
    field (PINI, "YES")
+   field(PHAS, "2")
    field (SCAN, "2 second")
 }
 
@@ -33,8 +34,21 @@ record(ai, "$(P)$(DET1):sDoseRtM") {
    field (DTYP, "stream")
    field (INP, "@dpu.proto get_dr(1,0x41,$(DET1)) $(PORT)")
    field (SCAN, "I/O Intr")
-   field (FLNK, "$(P)$(DET1):sDoseRt")
+   field (FLNK, "$(P)$(DET1):sDoseRt")   
+   field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
+#   field (SDIS, "SDIS-Test CP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
 }
+
+#record(ao, "SDIS-Test") {
+#  field(DESC, "SDIS test")
+#  field(HIGH, "4")
+#  field(HSV, "MAJOR")
+#  field(VAL, "5")
+#  field(SCAN, "Passive")
+#  field(PINI, "YES")
+#  field(PHAS, "1")
+#}
 
 record(mbbi, "$(P)$(DET1):sDoseRtExp") {
    field (DESC, "Dose rate exp")
@@ -43,7 +57,7 @@ record(mbbi, "$(P)$(DET1):sDoseRtExp") {
    field (SXST, "M")
    field (NIST, "G")
    field (TVST, "T")   
-   field (SDIS, "$(P)$(DET1):sDoseRtM NPP MS")
+   field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
@@ -54,14 +68,14 @@ record(calc, "$(P)$(DET1):sDoseRt") {
    field (CALC, "A*10^B")
    field (PREC, "2")
    field (FLNK, "$(P)$(DET1):sDetTyp")   
-   field (SDIS, "$(P)$(DET1):sDoseRtM NPP MS")
+   field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
 record(ai, "$(P)$(DET1):sAccDoseM") {
    field (DESC, "Dose Det 1")   
    field (FLNK, "$(P)$(DET1):sAccDose")   
-   field (SDIS, "$(P)$(DET1):sDoseRtM NPP MS")
+   field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
@@ -72,7 +86,7 @@ record(mbbi, "$(P)$(DET1):sAccDoseExp") {
    field (SXST, "M")
    field (NIST, "G")
    field (TVST, "T")   
-   field (SDIS, "$(P)$(DET1):sDoseRtM NPP MS")
+   field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
@@ -82,7 +96,7 @@ record(calc, "$(P)$(DET1):sAccDose") {
    field (INPB, "$(P)$(DET1):sAccDoseExp")
    field (CALC, "A*10^B")
    field (PREC, "2")   
-   field (SDIS, "$(P)$(DET1):sDoseRtM NPP MS")
+   field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
@@ -208,7 +222,6 @@ record(mbbi, "$(P)$(DET1):sThrExp") {
 
 record(calc, "$(P)$(DET1):sThr") {
    field (DESC, "Threshold")
-   field (PINI, "YES")
    field (INPA, "$(P)$(DET1):sThrM")
    field (INPB, "$(P)$(DET1):sThrExp")
    field (CALC, "A*10^B")
