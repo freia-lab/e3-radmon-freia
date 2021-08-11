@@ -1,0 +1,227 @@
+################# DET 4 ########################
+
+# ACCUMULATED DOSE AND DOSE RATE
+
+record(stringin, "$(P)$(DET4):sString") {
+   field (DESC, "Data Det 4")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_data(4,0x41) $(PORT)")
+}
+
+record(ai, "$(P)$(DET4):sDoseRtM") {
+   field (DESC, "Dose rate mantissa")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_dr(4,0x41,$(DET4)) $(PORT)")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)$(DET4):sDoseRt")   
+   field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
+#   field (SDIS, "SDIS-Test CP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(mbbi, "$(P)$(DET4):sDoseRtExp") {
+   field (DESC, "Dose rate exp")
+   field (ZRST, " ")
+   field (THST, "K")
+   field (SXST, "M")
+   field (NIST, "G")
+   field (TVST, "T")   
+   field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(calc, "$(P)$(DET4):sDoseRt") {
+   field (DESC, "Dose rate")
+   field (INPA, "$(P)$(DET4):sDoseRtM")
+   field (INPB, "$(P)$(DET4):sDoseRtExp")
+   field (CALC, "A*10^B")
+   field (PREC, "2")
+   field (FLNK, "$(P)$(DET4):sDetTyp")   
+   field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(ai, "$(P)$(DET4):sAccDoseM") {
+   field (DESC, "Dose Det 1")   
+   field (FLNK, "$(P)$(DET4):sAccDose")   
+   field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(mbbi, "$(P)$(DET4):sAccDoseExp") {
+   field (DESC, "Dose det 1 exp")
+   field (ZRST, " ")
+   field (THST, "K")
+   field (SXST, "M")
+   field (NIST, "G")
+   field (TVST, "T")   
+   field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(calc, "$(P)$(DET4):sAccDose") {
+   field (DESC, "Accumulated dose")
+   field (INPA, "$(P)$(DET4):sAccDoseM")
+   field (INPB, "$(P)$(DET4):sAccDoseExp")
+   field (CALC, "A*10^B")
+   field (PREC, "2")   
+   field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+
+record(bo, "$(P)$(DET4):ClrAccDosecmd") {
+   field (DESC, "Det 1 Clear accumulated dose")
+   #field (DTYP, "stream")
+   #field (OUT, "@dpu.proto clr_dos(4) $(PORT)")
+}
+
+record(mbbi, "$(P)$(DET4):sDetTyp") {
+   field (DESC, "Detector type")
+   field (ZRST, "No detector")
+   field (ONST, "pm10")
+   field (TWST, "pm11")
+   field (THST, "ic10")
+   field (FRST, "gm10")
+   field (FVST, "gm40")
+   field (SXST, "gm41")
+   field (SVST, "gm42")
+   field (EIST, "BF3")
+   field (NIST, "42-30H")
+   field (TEST, "UR")
+   field (ELST, "Berthold")
+}
+
+record(bi, "$(P)$(DET4):sOVF") {
+   field (DESC, "1 = OVF")
+   field (ZNAM, "OK")
+   field (ONAM, "OVF")
+}
+
+record(mbbi, "$(P)$(DET4):sFail") {
+   field (DESC, "4 = FAIL_FLG ")
+   field (ZRST, "OK")
+   field (FRST, "FAIL_FLG")
+}
+
+#  BACKGROUND
+
+record(stringin, "$(P)$(DET4):sStringBG") {
+   field (DESC, "Background Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto read_btv(4,0x39) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(DET4):sBGM") {
+   field (DESC, "Background mantissa")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_btv(4,0x39,$(DET4),:sBG) $(PORT)")
+   field (FLNK, "$(P)$(DET4):sBG")
+}
+
+record(mbbi, "$(P)$(DET4):sBGExp") {
+   field (DESC, "Background exp")
+   field (ZRST, " ")
+   field (THST, "K")
+   field (FVST, "s")
+   field (SXST, "M")
+   field (NIST, "G")
+   field (TVST, "T")  
+   field (SDIS, "$(P)$(DET4):sBGM NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(calc, "$(P)$(DET4):sBG") {
+   field (DESC, "Background")
+   field (INPA, "$(P)$(DET4):sBGM")
+   field (INPB, "$(P)$(DET4):sBGExp")
+   field (CALC, "(B=5) ? VAL : A*10^B")
+   field (PREC, "2")  
+#   field (SDIS, "$(P)$(DET4):sBGM NPP MS")
+#   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(ao, "$(P)$(DET4):BGcSetV") {
+   field (DESC, "Threshold set value")
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto set_bg(4,2) $(PORT)")
+   field (DRVH, "62000")
+   field (DRVL, "1")
+}
+
+#record(mbbo, "$(P)$(DET4):BGExpcSetV") {
+#   field (DESC, "Background set exponent")
+#   field (ONST, "-1")
+#   field (TWST, "-2")
+#   field (THST, "-3")
+#   field (FRST, "0")
+#   field (FVST, "3")
+#   field (SXST, "2")
+#   field (SVST, "1")
+#}
+
+# THRESHOLD
+
+record(stringin, "$(P)$(DET4):sStringThr") {
+   field (DESC, "Thr Det 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto read_btv(4,0x43) $(PORT)")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(DET4):sThrM") {
+   field (DESC, "Threshold mantissa")
+   field (DTYP, "stream")
+   field (INP, "@dpu.proto get_btv(4,0x43,$(DET4),:sThr) $(PORT)")
+   field (FLNK, "$(P)$(DET4):sThr")
+}
+
+
+record(mbbi, "$(P)$(DET4):sThrExp") {
+   field (DESC, "Background exp")
+   field (ZRST, " ")
+   field (THST, "K")
+   field (SXST, "M")
+   field (NIST, "G")
+   field (TVST, "T")  
+   field (SDIS, "$(P)$(DET4):sThrM NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(calc, "$(P)$(DET4):sThr") {
+   field (DESC, "Threshold")
+   field (INPA, "$(P)$(DET4):sThrM")
+   field (INPB, "$(P)$(DET4):sThrExp")
+   field (CALC, "A*10^B")
+   field (PREC, "2")  
+   field (SDIS, "$(P)$(DET4):sThrM NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(ao, "$(P)$(DET4):ThrMcSetV") {
+   field (DESC, "Threshold set mantissa")
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto set_thr(4,0,$(P)$(DET4):ThrExpcSetV) $(PORT)")
+}
+
+record(ao, "$(P)$(DET4):ThrExpcSetV"){
+   field (DESC, "Threshold set exponent")
+   field (FLNK, "$(P)$(DET4):ThrMcSetV")
+}
+
+record(ao, "$(P)$(DET4):ThrcSetV"){
+   field (DESC, "Threshold set value")
+   field (FLNK, "$(P)$(DET4):ThrSub")
+   field (PREC, "2")
+}
+
+record(aSub, "$(P)$(DET4):ThrSub") {
+   field(SNAM,"man_exp_fun")
+   field(INPA, "$(P)$(DET4):ThrcSetV")
+   field(OUTA, "$(P)$(DET4):ThrMcSetV")
+   field(OUTB, "$(P)$(DET4):ThrExpcSetV PP")
+   field(FTVA, "DOUBLE")
+   field(FTVB, "DOUBLE")
+}
+

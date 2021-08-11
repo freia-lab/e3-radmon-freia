@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>dpu freia temp</name>
   <width>550</width>
-  <height>300</height>
+  <height>310</height>
   <widget type="group" version="2.0.0">
     <name>Group_4</name>
     <macros>
@@ -111,6 +111,7 @@
       <color name="LED-RED-ON" red="255" green="60" blue="46">
       </color>
     </on_color>
+    <tooltip>Overflow</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
@@ -123,6 +124,7 @@
       <color name="LED-RED-ON" red="255" green="60" blue="46">
       </color>
     </on_color>
+    <tooltip>Fail</tooltip>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Group_8</name>
@@ -213,8 +215,8 @@
     </actions>
     <pv_name>$(PREFIX)ClrAccDosecmd</pv_name>
     <text>Reset dose</text>
-    <x>439</x>
-    <y>63</y>
+    <x>429</x>
+    <y>62</y>
     <width>65</width>
     <height>18</height>
     <font>

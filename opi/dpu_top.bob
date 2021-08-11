@@ -7,10 +7,42 @@
       <PREFIX>RadProtFr-Office:GD-01:</PREFIX>
     </macros>
     <file>Embedded/dpu_template.bob</file>
-    <x>70</x>
-    <y>50</y>
+    <x>10</x>
+    <y>10</y>
     <width>550</width>
-    <height>200</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <PREFIX>RadProtFr-Bunker1:GD-01:</PREFIX>
+    </macros>
+    <file>Embedded/dpu_template.bob</file>
+    <x>590</x>
+    <y>10</y>
+    <width>550</width>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <PREFIX>RadProtFr-Bunker1:GD-02:</PREFIX>
+    </macros>
+    <file>Embedded/dpu_template.bob</file>
+    <x>10</x>
+    <y>310</y>
+    <width>550</width>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <PREFIX>RadProtFr-Bunker1:GD-03:</PREFIX>
+    </macros>
+    <file>Embedded/dpu_template.bob</file>
+    <x>590</x>
+    <y>310</y>
+    <width>550</width>
     <resize>2</resize>
   </widget>
 </display>
