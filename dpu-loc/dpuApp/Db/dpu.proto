@@ -36,22 +36,28 @@ read_btv {
 
 clr_dos {
    out  0x01 "990\$100" 0x2D "0001%1<notsum>";
-   in 0x01 "%*#s";
+   in 0x01 "0\$19910" 0x2D "0001sta00%*1<notsum>";
 }
 
 #$2 = 0 for Thr, 2 for BG
 
 set_thr {
    out  0x01 "990\$1\$2" "%(\$3)1i" "%05i%1<notsum>";
-   in 0x01 "%*#s";
+   in 0x01 "0\$1991" "%(\$3)=1i" "%=05ista00%*1<notsum>";
 }
 
 #set_bg: "4" represents 1e0.
 
+#set_bg {
+#   out  0x01 "990\$1\$2" "4" "%05i%1<notsum>";
+#   in 0x01 "0\$1991" "4" "%=05i"  "sta00%*1<notsum>";
+#}
+
 set_bg {
-   out  0x01 "990\$1\$2" "4" "%05i%1<notsum>";
-   in 0x01 "%*#s";
+   out  0x01 "990\$1\$2" "4" "%(A)05i%1<notsum>";
+   in 0x01 "0\$1991" "4" "%=04i" "3"  "sta00%*1<notsum>";
 }
+
 
 get_dr {
 #   in 0x01 "0\$10036%5f" $exp_regex "%(" $P "\$3" $DOSERT "Exp)i%(" $P "\$3" $DOSERT ".EGU)5c" $2 "%("$P "\$3" $DT")1ia%("$P "\$3" $OVF")1i%("$P "\$3" $FAIL")1i%(" $P "\$3" $DOSE "M)5f" $exp_regex "%(" $P "\$3" $DOSE "Exp)i%(" $P "\$3" $DOSE".EGU)5c%*s";

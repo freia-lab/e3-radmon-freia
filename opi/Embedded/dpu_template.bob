@@ -191,7 +191,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_1</name>
-    <pv_name>$(PREFIX)BGcSetV</pv_name>
+    <pv_name>$(PREFIX)BGcSetV.A</pv_name>
     <x>154</x>
     <y>253</y>
     <width>70</width>

@@ -37,6 +37,9 @@ record(calc, "$(P)Cycle"){
    field (CALC, "(VAL=7)? 0 : (VAL+1)")
 }
 
+#record(stringin, "test_ack") {
+#}
+
 ################# DET 1 ########################
 
 # ACCUMULATED DOSE AND DOSE RATE
@@ -191,24 +194,13 @@ record(calc, "$(P)$(DET1):sBG") {
 #   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
-record(ao, "$(P)$(DET1):BGcSetV") {
-   field (DESC, "Threshold set value")
+
+record(calcout, "$(P)$(DET1):BGcSetV") {
+   field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(1,2) $(PORT)")
-   field (DRVH, "62000")
-   field (DRVL, "1")
+   field (SCAN, "Passive")
 }
-
-#record(mbbo, "$(P)$(DET1):BGExpcSetV") {
-#   field (DESC, "Background set exponent")
-#   field (ONST, "-1")
-#   field (TWST, "-2")
-#   field (THST, "-3")
-#   field (FRST, "0")
-#   field (FVST, "3")
-#   field (SXST, "2")
-#   field (SVST, "1")
-#}
 
 # THRESHOLD
 
@@ -430,24 +422,12 @@ record(calc, "$(P)$(DET2):sBG") {
 #   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
-record(ao, "$(P)$(DET2):BGcSetV") {
-   field (DESC, "Threshold set value")
+record(calcout, "$(P)$(DET2):BGcSetV") {
+   field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(2,2) $(PORT)")
-   field (DRVH, "62000")
-   field (DRVL, "1")
+   field (SCAN, "Passive")
 }
-
-#record(mbbo, "$(P)$(DET2):BGExpcSetV") {
-#   field (DESC, "Background set exponent")
-#   field (ONST, "-1")
-#   field (TWST, "-2")
-#   field (THST, "-3")
-#   field (FRST, "0")
-#   field (FVST, "3")
-#   field (SXST, "2")
-#   field (SVST, "1")
-#}
 
 # THRESHOLD
 
@@ -657,24 +637,12 @@ record(calc, "$(P)$(DET3):sBG") {
 #   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
-record(ao, "$(P)$(DET3):BGcSetV") {
-   field (DESC, "Threshold set value")
+record(calcout, "$(P)$(DET3):BGcSetV") {
+   field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(3,2) $(PORT)")
-   field (DRVH, "62000")
-   field (DRVL, "1")
+   field (SCAN, "Passive")
 }
-
-#record(mbbo, "$(P)$(DET3):BGExpcSetV") {
-#   field (DESC, "Background set exponent")
-#   field (ONST, "-1")
-#   field (TWST, "-2")
-#   field (THST, "-3")
-#   field (FRST, "0")
-#   field (FVST, "3")
-#   field (SXST, "2")
-#   field (SVST, "1")
-#}
 
 # THRESHOLD
 
@@ -884,24 +852,12 @@ record(calc, "$(P)$(DET4):sBG") {
 #   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
-record(ao, "$(P)$(DET4):BGcSetV") {
-   field (DESC, "Threshold set value")
+record(calcout, "$(P)$(DET4):BGcSetV") {
+   field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(4,2) $(PORT)")
-   field (DRVH, "62000")
-   field (DRVL, "1")
+   field (SCAN, "Passive")
 }
-
-#record(mbbo, "$(P)$(DET4):BGExpcSetV") {
-#   field (DESC, "Background set exponent")
-#   field (ONST, "-1")
-#   field (TWST, "-2")
-#   field (THST, "-3")
-#   field (FRST, "0")
-#   field (FVST, "3")
-#   field (SXST, "2")
-#   field (SVST, "1")
-#}
 
 # THRESHOLD
 
