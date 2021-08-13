@@ -1,5 +1,60 @@
 #Sequence record: handles requests to the device.
 
+record(seq, "$(P)Seq-init"){
+   field (DESC, "Init: set BG and Thr")
+
+   field (DOL0, "$(P)$(DET1):sBGM PP")
+   field (DOL1, "$(P)$(DET1):sBG NPP")
+   field (DLY1, "0.2")
+   field (LNK1, "$(P)$(DET1):BGcSetV.A NPP")
+
+   field (DLY2, "0.25")
+   field (DOL2, "$(P)$(DET1):sThrM PP")
+   field (DOL3, "$(P)$(DET1):sThr NPP")
+   field (DLY3, "0.2")
+   field (LNK3, "$(P)$(DET1):ThrcSetV NPP")
+   field (DLY4, "0.25")
+
+   field (DOL4, "$(P)$(DET2):sBGM PP")
+   field (DOL5, "$(P)$(DET2):sBG NPP")
+   field (DLY5, "0.2")
+   field (LNK5, "$(P)$(DET2):BGcSetV.A NPP")
+
+   field (DLY6, "0.25")
+   field (DOL6, "$(P)$(DET2):sThrM PP")
+   field (DOL7, "$(P)$(DET2):sThr NPP")
+   field (DLY7, "0.2")
+   field (LNK7, "$(P)$(DET2):ThrcSetV NPP")
+   field (DLY8, "0.25")
+
+   field (DOL8, "$(P)$(DET3):sBGM PP")
+   field (DOL9, "$(P)$(DET3):sBG NPP")
+   field (DLY9, "0.2")
+   field (LNK9, "$(P)$(DET3):BGcSetV.A NPP")
+
+   field (DLYA, "0.25")
+   field (DOLA, "$(P)$(DET3):sThrM PP")
+   field (DOLB, "$(P)$(DET3):sThr NPP")
+   field (DLYB, "0.2")
+   field (LNKB, "$(P)$(DET3):ThrcSetV NPP")
+   field (DLYC, "0.25")
+
+   field (DOLC, "$(P)$(DET4):sBGM PP")
+   field (DOLD, "$(P)$(DET4):sBG NPP")
+   field (DLYD, "0.2")
+   field (LNKD, "$(P)$(DET4):BGcSetV.A NPP")
+
+   field (DLYE, "0.25")
+   field (DOLE, "$(P)$(DET4):sThrM PP")
+   field (DOLF, "$(P)$(DET4):sThr NPP")
+   field (DLYF, "0.2")
+   field (LNKF, "$(P)$(DET4):ThrcSetV NPP")
+
+
+   field (PINI, "YES")
+   field (PHAS, "1")
+}
+
 record(seq, "$(P)Seq"){
    field (DESC, "Data Det 2")
    field (DOL1, "$(P)$(DET1):sString PP")
@@ -15,6 +70,7 @@ record(seq, "$(P)Seq"){
    field (DLY5, "0.25")
 #   field (DLY6, "0.25")
    field (PINI, "YES")
+   field (PHAS, "2")
    field (SCAN, "2 second")
 }
 
@@ -190,8 +246,8 @@ record(calc, "$(P)$(DET1):sBG") {
    field (INPB, "$(P)$(DET1):sBGExp")
    field (CALC, "(B=5) ? VAL : A*10^B")
    field (PREC, "2")  
-#   field (SDIS, "$(P)$(DET1):sBGM NPP MS")
-#   field (DISV, "-1") # Will never disable, but will propagate severity
+   field (SDIS, "$(P)$(DET1):sBGM NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
 
@@ -418,8 +474,8 @@ record(calc, "$(P)$(DET2):sBG") {
    field (INPB, "$(P)$(DET2):sBGExp")
    field (CALC, "(B=5) ? VAL : A*10^B")
    field (PREC, "2")  
-#   field (SDIS, "$(P)$(DET2):sBGM NPP MS")
-#   field (DISV, "-1") # Will never disable, but will propagate severity
+   field (SDIS, "$(P)$(DET2):sBGM NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
 record(calcout, "$(P)$(DET2):BGcSetV") {
@@ -633,8 +689,8 @@ record(calc, "$(P)$(DET3):sBG") {
    field (INPB, "$(P)$(DET3):sBGExp")
    field (CALC, "(B=5) ? VAL : A*10^B")
    field (PREC, "2")  
-#   field (SDIS, "$(P)$(DET3):sBGM NPP MS")
-#   field (DISV, "-1") # Will never disable, but will propagate severity
+   field (SDIS, "$(P)$(DET3):sBGM NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
 record(calcout, "$(P)$(DET3):BGcSetV") {
@@ -848,8 +904,8 @@ record(calc, "$(P)$(DET4):sBG") {
    field (INPB, "$(P)$(DET4):sBGExp")
    field (CALC, "(B=5) ? VAL : A*10^B")
    field (PREC, "2")  
-#   field (SDIS, "$(P)$(DET4):sBGM NPP MS")
-#   field (DISV, "-1") # Will never disable, but will propagate severity
+   field (SDIS, "$(P)$(DET4):sBGM NPP MS")
+   field (DISV, "-1") # Will never disable, but will propagate severity
 }
 
 record(calcout, "$(P)$(DET4):BGcSetV") {
