@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>dpu freia temp</name>
-  <width>550</width>
+  <width>540</width>
   <height>310</height>
   <widget type="group" version="2.0.0">
     <name>Group_4</name>
@@ -10,21 +10,25 @@
     </macros>
     <x>40</x>
     <y>60</y>
-    <width>385</width>
+    <width>270</width>
     <height>22</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_31</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>150</width>
       <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_32</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>160</x>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -34,21 +38,25 @@
     </macros>
     <x>40</x>
     <y>100</y>
-    <width>385</width>
+    <width>270</width>
     <height>22</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_33</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>150</width>
       <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_34</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>160</x>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -58,22 +66,26 @@
     </macros>
     <x>40</x>
     <y>20</y>
-    <width>640</width>
+    <width>470</width>
     <height>20</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_47</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>251</width>
+      <width>150</width>
       <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_48</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>277</x>
-      <width>363</width>
+      <x>160</x>
+      <width>300</width>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -83,30 +95,36 @@
     </macros>
     <x>40</x>
     <y>140</y>
-    <width>385</width>
+    <width>270</width>
     <height>22</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_49</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>150</width>
       <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_50</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>160</x>
     </widget>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>$(PREFIX)sOVF</pv_name>
-    <x>447</x>
-    <y>122</y>
-    <width>15</width>
-    <height>15</height>
+    <x>190</x>
+    <y>266</y>
+    <off_color>
+      <color name="OK" red="61" green="216" blue="61">
+      </color>
+    </off_color>
     <on_color>
       <color name="LED-RED-ON" red="255" green="60" blue="46">
       </color>
@@ -116,10 +134,12 @@
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
     <pv_name>$(PREFIX)sFail</pv_name>
-    <x>468</x>
-    <y>122</y>
-    <width>15</width>
-    <height>15</height>
+    <x>220</x>
+    <y>266</y>
+    <off_color>
+      <color name="OK" red="61" green="216" blue="61">
+      </color>
+    </off_color>
     <on_color>
       <color name="LED-RED-ON" red="255" green="60" blue="46">
       </color>
@@ -133,21 +153,25 @@
     </macros>
     <x>40</x>
     <y>180</y>
-    <width>385</width>
+    <width>270</width>
     <height>22</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_51</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>150</width>
       <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_52</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>160</x>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -157,52 +181,42 @@
     </macros>
     <x>40</x>
     <y>220</y>
-    <width>385</width>
+    <width>270</width>
     <height>22</height>
     <style>3</style>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_53</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>150</width>
       <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_54</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>160</x>
     </widget>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
     <pv_name>$(PREFIX)ThrcSetV</pv_name>
-    <x>154</x>
-    <y>280</y>
+    <x>350</x>
+    <y>220</y>
     <width>70</width>
     <precision></precision>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <text>Set threshold:</text>
-    <x>40</x>
-    <y>277</y>
-    <width>110</width>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_1</name>
     <pv_name>$(PREFIX)BGcSetV.A</pv_name>
-    <x>154</x>
-    <y>253</y>
+    <x>350</x>
+    <y>180</y>
     <width>70</width>
     <precision>0</precision>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_3</name>
-    <text>Set background:</text>
-    <x>40</x>
-    <y>250</y>
-    <width>110</width>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
@@ -214,16 +228,19 @@
       </action>
     </actions>
     <pv_name>$(PREFIX)ClrAccDosecmd</pv_name>
-    <text>Reset dose</text>
-    <x>429</x>
-    <y>62</y>
-    <width>65</width>
-    <height>18</height>
-    <font>
-      <font family="Source Sans Pro" style="REGULAR" size="12.0">
-      </font>
-    </font>
+    <text>Clear dose</text>
+    <x>350</x>
+    <y>60</y>
+    <width>110</width>
+    <height>25</height>
     <show_confirm_dialog>true</show_confirm_dialog>
     <confirm_message>Are you sure you want to reset the dose?</confirm_message>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Status:</text>
+    <x>130</x>
+    <y>260</y>
+    <width>60</width>
   </widget>
 </display>

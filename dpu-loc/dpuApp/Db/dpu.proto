@@ -7,7 +7,7 @@ exp_regex = "%#+1/ /0/%#+1/K/3/%#+1/M/6/%#+1/G/9/%#+1/T/12/";
 
 unit_regex = "%#/uSv/μSv/";
 
-P = "RadProtFr-";
+P = "RadProt-";
 
 DOSE = ":sAccDose";
 

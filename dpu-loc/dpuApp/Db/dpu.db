@@ -180,8 +180,9 @@ record(calc, "$(P)$(DET1):sAccDose") {
 
 record(bo, "$(P)$(DET1):ClrAccDosecmd") {
    field (DESC, "Det 1 Clear accumulated dose")
-   #field (DTYP, "stream")
-   #field (OUT, "@dpu.proto clr_dos(1) $(PORT)")
+   field (UDFS, "NO_ALARM") 
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto clr_dos(1) $(PORT)")
 }
 
 record(mbbi, "$(P)$(DET1):sDetTyp") {
@@ -252,6 +253,7 @@ record(calc, "$(P)$(DET1):sBG") {
 
 
 record(calcout, "$(P)$(DET1):BGcSetV") {
+   field (UDFS, "NO_ALARM") 
    field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(1,2) $(PORT)")
@@ -321,6 +323,7 @@ record(ao, "$(P)$(DET1):ThrExpcSetV"){
 
 record(ao, "$(P)$(DET1):ThrcSetV"){
    field (DESC, "Threshold set value")
+   field (UDFS, "NO_ALARM") 
    field (FLNK, "$(P)$(DET1):ThrSub")
    field (PREC, "2")
 }
@@ -408,8 +411,9 @@ record(calc, "$(P)$(DET2):sAccDose") {
 
 record(bo, "$(P)$(DET2):ClrAccDosecmd") {
    field (DESC, "Det 1 Clear accumulated dose")
-   #field (DTYP, "stream")
-   #field (OUT, "@dpu.proto clr_dos(2) $(PORT)")
+   field (UDFS, "NO_ALARM") 
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto clr_dos(2) $(PORT)")
 }
 
 record(mbbi, "$(P)$(DET2):sDetTyp") {
@@ -479,6 +483,7 @@ record(calc, "$(P)$(DET2):sBG") {
 }
 
 record(calcout, "$(P)$(DET2):BGcSetV") {
+   field (UDFS, "NO_ALARM") 
    field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(2,2) $(PORT)")
@@ -536,6 +541,7 @@ record(ao, "$(P)$(DET2):ThrExpcSetV"){
 
 record(ao, "$(P)$(DET2):ThrcSetV"){
    field (DESC, "Threshold set value")
+   field (UDFS, "NO_ALARM") 
    field (FLNK, "$(P)$(DET2):ThrSub")
    field (PREC, "2")
 }
@@ -623,8 +629,9 @@ record(calc, "$(P)$(DET3):sAccDose") {
 
 record(bo, "$(P)$(DET3):ClrAccDosecmd") {
    field (DESC, "Det 1 Clear accumulated dose")
-   #field (DTYP, "stream")
-   #field (OUT, "@dpu.proto clr_dos(3) $(PORT)")
+   field (UDFS, "NO_ALARM") 
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto clr_dos(3) $(PORT)")
 }
 
 record(mbbi, "$(P)$(DET3):sDetTyp") {
@@ -694,6 +701,7 @@ record(calc, "$(P)$(DET3):sBG") {
 }
 
 record(calcout, "$(P)$(DET3):BGcSetV") {
+   field (UDFS, "NO_ALARM") 
    field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(3,2) $(PORT)")
@@ -751,6 +759,7 @@ record(ao, "$(P)$(DET3):ThrExpcSetV"){
 
 record(ao, "$(P)$(DET3):ThrcSetV"){
    field (DESC, "Threshold set value")
+   field (UDFS, "NO_ALARM") 
    field (FLNK, "$(P)$(DET3):ThrSub")
    field (PREC, "2")
 }
@@ -838,8 +847,9 @@ record(calc, "$(P)$(DET4):sAccDose") {
 
 record(bo, "$(P)$(DET4):ClrAccDosecmd") {
    field (DESC, "Det 1 Clear accumulated dose")
-   #field (DTYP, "stream")
-   #field (OUT, "@dpu.proto clr_dos(4) $(PORT)")
+   field (UDFS, "NO_ALARM") 
+   field (DTYP, "stream")
+   field (OUT, "@dpu.proto clr_dos(4) $(PORT)")
 }
 
 record(mbbi, "$(P)$(DET4):sDetTyp") {
@@ -909,6 +919,7 @@ record(calc, "$(P)$(DET4):sBG") {
 }
 
 record(calcout, "$(P)$(DET4):BGcSetV") {
+   field (UDFS, "NO_ALARM") 
    field (CALC, "FLOOR(A/10)")
    field (DTYP, "stream")
    field (OUT, "@dpu.proto set_bg(4,2) $(PORT)")
@@ -966,6 +977,7 @@ record(ao, "$(P)$(DET4):ThrExpcSetV"){
 
 record(ao, "$(P)$(DET4):ThrcSetV"){
    field (DESC, "Threshold set value")
+   field (UDFS, "NO_ALARM") 
    field (FLNK, "$(P)$(DET4):ThrSub")
    field (PREC, "2")
 }

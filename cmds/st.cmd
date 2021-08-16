@@ -16,7 +16,7 @@ drvAsynIPPortConfigure("PORT1","192.168.10.5:4001",0,0,0)
 epicsEnvSet("STREAM_PROTOCOL_PATH","$(dpu_DB)")
 
 #Load your database defining the EPICS records
-dbLoadRecords("dpu.db", "PORT=PORT1,P=RadProtFr-,DET1=Office:GD-01,DET2=Bunker1:GD-01,DET3=Bunker1:GD-02,DET4=Bunker1:GD-03")
+dbLoadRecords("dpu.db", "PORT=PORT1,P=RadProt-,DET1=Office:GD-01,DET2=Bunker1:GD-01,DET3=Bunker1:GD-02,DET4=Bunker1:GD-03")
 
 #dbLoadDatabase("dpu-loc/dpuApp/src/subroutine.dbd")
 
