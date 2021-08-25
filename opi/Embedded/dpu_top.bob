@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>dpu freia top</name>
-  <width>1100</width>
+  <width>1110</width>
   <height>700</height>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <macros>
       <PREFIX>RadProt-Office:GD-01:</PREFIX>
     </macros>
-    <file>Embedded/dpu_template.bob</file>
+    <file>dpu_template.bob</file>
     <y>80</y>
     <width>540</width>
     <height>310</height>
@@ -19,7 +19,7 @@
     <macros>
       <PREFIX>RadProt-Bunker1:GD-01:</PREFIX>
     </macros>
-    <file>Embedded/dpu_template.bob</file>
+    <file>dpu_template.bob</file>
     <x>580</x>
     <y>80</y>
     <width>540</width>
@@ -31,7 +31,7 @@
     <macros>
       <PREFIX>RadProt-Bunker1:GD-02:</PREFIX>
     </macros>
-    <file>Embedded/dpu_template.bob</file>
+    <file>dpu_template.bob</file>
     <y>380</y>
     <width>540</width>
     <height>310</height>
@@ -42,7 +42,7 @@
     <macros>
       <PREFIX>RadProt-Bunker1:GD-03:</PREFIX>
     </macros>
-    <file>Embedded/dpu_template.bob</file>
+    <file>dpu_template.bob</file>
     <x>580</x>
     <y>380</y>
     <width>540</width>
@@ -51,10 +51,10 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>FREIA Radiation Monitoring System</text>
+    <text>FREIA Radiation Monitoring System Settings</text>
     <x>50</x>
     <y>10</y>
-    <width>570</width>
+    <width>730</width>
     <height>60</height>
     <font>
       <font name="HEADER" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">

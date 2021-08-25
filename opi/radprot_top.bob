@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Radprot-freia</name>
+  <macros>
+    <P>RadProt</P>
+  </macros>
+  <width>1450</width>
+  <height>510</height>
+  <background_color>
+    <color name="BACKGROUND" red="220" green="225" blue="221">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_visible>false</grid_visible>
+  <widget type="label" version="2.0.0">
+    <name>Label Template</name>
+    <text>Radiation dose monitors</text>
+    <x>15</x>
+    <y>15</y>
+    <width>277</width>
+    <height>24</height>
+    <font>
+      <font family="Sans" style="BOLD_ITALIC" size="20.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="BLACK" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="IO Border" red="215" green="215" blue="215">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Panel 2</name>
+    <x>15</x>
+    <y>55</y>
+    <width>605</width>
+    <height>429</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="picture" version="2.0.0">
+      <name>Image Template</name>
+      <file>pictures/Bunker_nomeasures600x429.png</file>
+      <width>600</width>
+      <height>429</height>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_3</name>
+      <pv_name>$(P)-Office:GD-01:sDoseRt</pv_name>
+      <x>186</x>
+      <y>23</y>
+      <width>119</width>
+      <height>24</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="255" blue="47">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>3</border_width>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Panel 2_1</name>
+      <macros>
+        <param>$(P)-Bunker1:GD-02:sDoseRt</param>
+      </macros>
+      <x>150</x>
+      <y>130</y>
+      <width>330</width>
+      <height>130</height>
+      <visible>false</visible>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=pv1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(param)</pv_name>
+          <pv_name>$(param).HIGH</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle Template_1</name>
+        <x>4</x>
+        <y>2</y>
+        <width>312</width>
+        <height>116</height>
+        <line_width>1</line_width>
+        <line_color>
+          <color name="IO Line" red="0" green="32" blue="92">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="IO Background" red="255" green="255" blue="205">
+          </color>
+        </background_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label Template_6</name>
+        <text>DOSE RATE HIGH 
+IN BUNKER</text>
+        <x>62</x>
+        <y>36</y>
+        <width>148</width>
+        <height>41</height>
+        <font>
+          <font family="Sans" style="BOLD" size="14.851485148514852">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="IO Background" red="255" green="255" blue="205">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <actions>
+        </actions>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_6</name>
+      <pv_name>$(P)-Bunker1:GD-02:sDoseRt</pv_name>
+      <x>265</x>
+      <y>248</y>
+      <width>119</width>
+      <height>24</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="20" green="255" blue="60">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>3</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label Template</name>
+      <text>Office balcony</text>
+      <x>10</x>
+      <y>27</y>
+      <width>96</width>
+      <height>25</height>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <actions>
+      </actions>
+      <border_color>
+        <color name="IO Border" red="215" green="215" blue="215">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Panel 2_1</name>
+      <macros>
+        <param>$(P)-Bunker1:GD-03:sDoseRt</param>
+      </macros>
+      <x>459</x>
+      <y>130</y>
+      <width>141</width>
+      <height>130</height>
+      <visible>false</visible>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=pv1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(param)</pv_name>
+          <pv_name>$(param).HIGH</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle Template_1</name>
+        <x>35</x>
+        <width>32</width>
+        <height>116</height>
+        <line_width>0</line_width>
+        <line_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GRAY" red="169" green="169" blue="169">
+          </color>
+        </background_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label Template_6</name>
+        <text>DOSE RATE HIGH</text>
+        <x>10</x>
+        <y>70</y>
+        <width>119</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="BACKGROUND" red="220" green="225" blue="221">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <actions>
+        </actions>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label Template_1</name>
+      <text>Bunker</text>
+      <x>240</x>
+      <y>75</y>
+      <width>49</width>
+      <height>25</height>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <auto_size>true</auto_size>
+      <actions>
+      </actions>
+      <border_color>
+        <color name="IO Border" red="215" green="215" blue="215">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_5</name>
+      <pv_name>$(P)-Bunker1:GD-03:sDoseRt</pv_name>
+      <x>483</x>
+      <y>146</y>
+      <width>119</width>
+      <height>24</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="255" blue="47">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>3</border_width>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Panel 2_1</name>
+      <macros>
+        <param>$(P)-Office:GD-01:sDoseRt</param>
+      </macros>
+      <width>600</width>
+      <height>21</height>
+      <visible>false</visible>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=pv1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(param)</pv_name>
+          <pv_name>$(param).HIGH</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle Template_1</name>
+        <width>601</width>
+        <height>16</height>
+        <line_width>0</line_width>
+        <line_color>
+          <color name="IO Line" red="0" green="32" blue="92">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="IO Background" red="255" green="255" blue="205">
+          </color>
+        </background_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label Template_6</name>
+        <text>DOSE RATE HIGH</text>
+        <x>90</x>
+        <width>119</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="IO Background" red="255" green="255" blue="205">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <actions>
+        </actions>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Panel 2_1</name>
+      <macros>
+        <param>$(P)-Bunker1:GD-01:sDoseRt</param>
+      </macros>
+      <y>100</y>
+      <width>141</width>
+      <height>130</height>
+      <visible>false</visible>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0&gt;=pv1">
+            <value>true</value>
+          </exp>
+          <pv_name>$(param)</pv_name>
+          <pv_name>$(param).HIGH</pv_name>
+        </rule>
+      </rules>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle Template_1</name>
+        <x>35</x>
+        <width>32</width>
+        <height>116</height>
+        <line_width>0</line_width>
+        <line_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GRAY" red="169" green="169" blue="169">
+          </color>
+        </background_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label Template_6</name>
+        <text>DOSE RATE HIGH</text>
+        <x>10</x>
+        <y>70</y>
+        <width>119</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="BACKGROUND" red="220" green="225" blue="221">
+          </color>
+        </background_color>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <actions>
+        </actions>
+        <border_color>
+          <color name="IO Border" red="215" green="215" blue="215">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update Template_4</name>
+      <pv_name>$(P)-Bunker1:GD-01:sDoseRt</pv_name>
+      <x>28</x>
+      <y>122</y>
+      <width>119</width>
+      <height>24</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="255" blue="47">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <precision>2</precision>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_width>3</border_width>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Panel 2</name>
+      <x>345</x>
+      <y>23</y>
+      <width>250</width>
+      <height>67</height>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Colour" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 &lt;= 3">
+            <value>
+              <color name="GREEN" red="61" green="216" blue="61">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0 == 10">
+            <value>
+              <color name="RED" red="252" green="13" blue="27">
+              </color>
+            </value>
+          </exp>
+          <pv_name>RadProt-Bunker1:Clearing:sState</pv_name>
+        </rule>
+      </rules>
+      <widget type="progressbar" version="2.0.0">
+        <name>Progress Bar Template</name>
+        <pv_name>RadProt-Bunker1:Clearing:sState</pv_name>
+        <x>17</x>
+        <y>33</y>
+        <width>215</width>
+        <height>30</height>
+        <fill_color>
+          <color red="0" green="82" blue="255">
+          </color>
+        </fill_color>
+        <actions>
+        </actions>
+        <rules>
+          <rule name="BgColor" prop_id="background_color" out_exp="false">
+            <exp bool_exp="pv0 &lt;= 3">
+              <value>
+                <color red="250" green="250" blue="250">
+                </color>
+              </value>
+            </exp>
+            <exp bool_exp="pv0 == 10">
+              <value>
+                <color red="250" green="250" blue="250">
+                </color>
+              </value>
+            </exp>
+            <pv_name>$(pv_name)</pv_name>
+          </rule>
+        </rules>
+        <limits_from_pv>false</limits_from_pv>
+        <maximum>10.0</maximum>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_1</name>
+        <pv_name>RadProt-Bunker1:Clearing:sState</pv_name>
+        <x>64</x>
+        <y>7</y>
+        <width>165</width>
+        <height>19</height>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="WHITE" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_width>2</border_width>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update Template_2</name>
+        <pv_name>RadProt-Bunker1:Clearing:sState</pv_name>
+        <x>21</x>
+        <y>7</y>
+        <width>30</width>
+        <height>19</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="WHITE" red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <format>1</format>
+        <horizontal_alignment>1</horizontal_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <rules>
+          <rule name="BorderRule" prop_id="border_style" out_exp="false">
+            <exp bool_exp="pv0==1">
+              <value>9</value>
+            </exp>
+            <pv_name>$(pv_name).SIMM</pv_name>
+          </rule>
+        </rules>
+        <border_width>2</border_width>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Panel 2_5</name>
+    <x>630</x>
+    <y>55</y>
+    <width>796</width>
+    <height>433</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="stripchart" version="2.0.0">
+      <name>XY Graph Template</name>
+      <width>397</width>
+      <height>216</height>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <title>Office GD1</title>
+      <title_font>
+        <font family="Source Sans Pro" style="BOLD" size="17.0">
+        </font>
+      </title_font>
+      <show_toolbar>false</show_toolbar>
+      <actions>
+      </actions>
+      <time_range>30 minute</time_range>
+      <y_axes>
+        <y_axis>
+          <title>µSv/h</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>1.0</maximum>
+          <show_grid>false</show_grid>
+          <visible>true</visible>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>$(traces[0].y_pv)</name>
+          <y_pv>$(P)-Office:GD-01:sDoseRt</y_pv>
+          <axis>1</axis>
+          <trace_type>2</trace_type>
+          <color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </color>
+          <line_width>2</line_width>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+    <widget type="stripchart" version="2.0.0">
+      <name>XY Graph Template_2</name>
+      <x>390</x>
+      <width>397</width>
+      <height>216</height>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <title>Inside Bunker GD2</title>
+      <title_font>
+        <font family="Source Sans Pro" style="BOLD" size="17.0">
+        </font>
+      </title_font>
+      <show_toolbar>false</show_toolbar>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Max1" prop_id="axis_1_maximum" out_exp="false">
+          <exp bool_exp="(pv0 &gt;= 1.0 &amp;&amp; pv0 &lt; 5.0) || ( pv1 &gt;= 1.0 &amp;&amp; pv1 &lt; 5.0) || (pv2 &gt;= 1.0 &amp;&amp; pv2 &lt; 5.0)  ">
+            <value>5.0</value>
+          </exp>
+          <exp bool_exp="pv0 &gt;= 5.0">
+            <value>10.0</value>
+          </exp>
+          <pv_name>$(P)-Bunker1:GD-01:sDoseRt</pv_name>
+          <pv_name>$(P)-Office:GD-01:sDoseRt</pv_name>
+          <pv_name>$(P)-Bunker1:GD-03:sDoseRt</pv_name>
+        </rule>
+      </rules>
+      <time_range>30 minute</time_range>
+      <y_axes>
+        <y_axis>
+          <title>µSv/h</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>1.0</maximum>
+          <show_grid>false</show_grid>
+          <visible>true</visible>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>$(traces[0].y_pv)</name>
+          <y_pv>$(P)-Bunker1:GD-02:sDoseRt</y_pv>
+          <axis>0</axis>
+          <trace_type>2</trace_type>
+          <color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </color>
+          <line_width>2</line_width>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+    <widget type="stripchart" version="2.0.0">
+      <name>XY Graph Template_3</name>
+      <y>216</y>
+      <width>397</width>
+      <height>216</height>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <title>Left Door Bunker GD1</title>
+      <title_font>
+        <font family="Source Sans Pro" style="BOLD" size="17.0">
+        </font>
+      </title_font>
+      <show_toolbar>false</show_toolbar>
+      <actions>
+      </actions>
+      <time_range>30 minute</time_range>
+      <y_axes>
+        <y_axis>
+          <title>µSv/h</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>1.0</maximum>
+          <show_grid>false</show_grid>
+          <visible>true</visible>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>$(traces[0].y_pv)</name>
+          <y_pv>$(P)-Bunker1:GD-01:sDoseRt</y_pv>
+          <axis>1</axis>
+          <trace_type>2</trace_type>
+          <color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </color>
+          <line_width>2</line_width>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+    <widget type="stripchart" version="2.0.0">
+      <name>XY Graph Template_4</name>
+      <x>396</x>
+      <y>216</y>
+      <width>397</width>
+      <height>216</height>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <title>Right Door Bunker GD3 </title>
+      <title_font>
+        <font family="Source Sans Pro" style="BOLD" size="17.0">
+        </font>
+      </title_font>
+      <show_toolbar>false</show_toolbar>
+      <actions>
+      </actions>
+      <time_range>30 minute</time_range>
+      <y_axes>
+        <y_axis>
+          <title>µSv/h</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>1.0</maximum>
+          <show_grid>false</show_grid>
+          <visible>true</visible>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>$(traces[0].y_pv)</name>
+          <y_pv>$(P)-Bunker1:GD-03:sDoseRt</y_pv>
+          <axis>0</axis>
+          <trace_type>2</trace_type>
+          <color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </color>
+          <line_width>2</line_width>
+          <point_type>0</point_type>
+          <point_size>10</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label Template_1</name>
+    <text>Dose rates (μSv/h)</text>
+    <x>630</x>
+    <y>15</y>
+    <width>211</width>
+    <height>25</height>
+    <font>
+      <font family="Sans" style="BOLD_ITALIC" size="20.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="BLACK" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="IO Border" red="215" green="215" blue="215">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button Template</name>
+    <actions>
+      <action type="open_display">
+        <file>accDose.bob</file>
+        <target>standalone</target>
+      </action>
+    </actions>
+    <text>Accumulated Dose...</text>
+    <x>1220</x>
+    <y>6</y>
+    <width>204</width>
+    <height>43</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button Template_1</name>
+    <actions>
+      <action type="open_display">
+        <file>doseRtHis.bob</file>
+        <target>standalone</target>
+      </action>
+    </actions>
+    <text>Dose Rate History...</text>
+    <x>1010</x>
+    <y>6</y>
+    <width>204</width>
+    <height>43</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button Template_2</name>
+    <actions>
+      <action type="open_display">
+        <file>Embedded/limits.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>Alarm Levels...</text>
+    <x>465</x>
+    <y>6</y>
+    <width>149</width>
+    <height>43</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button Template_3</name>
+    <actions>
+      <action type="open_display">
+        <file>Embedded/dpu_top.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>Detector Settings...</text>
+    <x>304</x>
+    <y>6</y>
+    <width>149</width>
+    <height>43</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

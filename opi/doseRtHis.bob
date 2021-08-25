@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Dose Rate</name>
+  <macros>
+    <P>RadProt</P>
+  </macros>
+  <width>1550</width>
+  <height>860</height>
+  <background_color>
+    <color name="BACKGROUND" red="220" green="225" blue="221">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_visible>false</grid_visible>
+  <widget type="databrowser" version="2.0.0">
+    <name>Data Browser_3</name>
+    <file>databrowser/BunkerGD03DoseRt.plt</file>
+    <x>760</x>
+    <y>455</y>
+    <width>736</width>
+    <height>391</height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="databrowser" version="2.0.0">
+    <name>Data Browser_2</name>
+    <file>databrowser/BunkerGD01DoseRt.plt</file>
+    <x>10</x>
+    <y>455</y>
+    <width>736</width>
+    <height>391</height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="databrowser" version="2.0.0">
+    <name>Data Browser_1</name>
+    <file>databrowser/BunkerGD02DoseRt.plt</file>
+    <x>760</x>
+    <y>45</y>
+    <width>736</width>
+    <height>391</height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="databrowser" version="2.0.0">
+    <name>Data Browser</name>
+    <file>databrowser/OfficeGD01DoseRt.plt</file>
+    <x>10</x>
+    <y>45</y>
+    <width>736</width>
+    <height>391</height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label Template</name>
+    <text>Dose Rate (μSv/h)</text>
+    <x>10</x>
+    <y>10</y>
+    <width>158</width>
+    <height>26</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="20.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="BLACK" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="IO Border" red="215" green="215" blue="215">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update Template_3</name>
+    <pv_name>$(P)-Office:GD-01:sDoseRt</pv_name>
+    <x>644</x>
+    <y>48</y>
+    <width>99</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="255" blue="47">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <precision>2</precision>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>3</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update Template_4</name>
+    <pv_name>$(P)-Bunker1:GD-01:sDoseRt</pv_name>
+    <x>644</x>
+    <y>458</y>
+    <width>99</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="255" blue="47">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <precision>2</precision>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>3</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update Template_6</name>
+    <pv_name>$(P)-Bunker1:GD-02:sDoseRt</pv_name>
+    <x>1394</x>
+    <y>48</y>
+    <width>99</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="20" green="255" blue="60">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>3</border_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update Template_5</name>
+    <pv_name>$(P)-Bunker1:GD-03:sDoseRt</pv_name>
+    <x>1394</x>
+    <y>458</y>
+    <width>99</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="255" blue="47">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <precision>2</precision>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>3</border_width>
+  </widget>
+</display>

@@ -144,6 +144,11 @@ record(calc, "$(P)$(DET1):sDoseRt") {
    field (INPB, "$(P)$(DET1):sDoseRtExp")
    field (CALC, "A*10^B")
    field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "0.3")
+   info (autosaveFields, "HIGH HIHI ADEL")
    field (FLNK, "$(P)$(DET1):sDetTyp")   
    field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
@@ -173,6 +178,7 @@ record(calc, "$(P)$(DET1):sAccDose") {
    field (INPB, "$(P)$(DET1):sAccDoseExp")
    field (CALC, "A*10^B")
    field (PREC, "2")   
+   field (ADEL, "1.0")
    field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
@@ -375,6 +381,11 @@ record(calc, "$(P)$(DET2):sDoseRt") {
    field (INPB, "$(P)$(DET2):sDoseRtExp")
    field (CALC, "A*10^B")
    field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "0.3")
+   info (autosaveFields, "HIGH HIHI ADEL")
    field (FLNK, "$(P)$(DET2):sDetTyp")   
    field (SDIS, "$(P)$(DET2):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
@@ -404,6 +415,7 @@ record(calc, "$(P)$(DET2):sAccDose") {
    field (INPB, "$(P)$(DET2):sAccDoseExp")
    field (CALC, "A*10^B")
    field (PREC, "2")   
+   field (ADEL, "2.0")
    field (SDIS, "$(P)$(DET2):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
@@ -593,6 +605,11 @@ record(calc, "$(P)$(DET3):sDoseRt") {
    field (INPB, "$(P)$(DET3):sDoseRtExp")
    field (CALC, "A*10^B")
    field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "0.3")
+   info (autosaveFields, "HIGH HIHI ADEL")
    field (FLNK, "$(P)$(DET3):sDetTyp")   
    field (SDIS, "$(P)$(DET3):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
@@ -622,6 +639,7 @@ record(calc, "$(P)$(DET3):sAccDose") {
    field (INPB, "$(P)$(DET3):sAccDoseExp")
    field (CALC, "A*10^B")
    field (PREC, "2")   
+   field (ADEL, "1.0")
    field (SDIS, "$(P)$(DET3):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
@@ -811,6 +829,11 @@ record(calc, "$(P)$(DET4):sDoseRt") {
    field (INPB, "$(P)$(DET4):sDoseRtExp")
    field (CALC, "A*10^B")
    field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "0.3")
+   info (autosaveFields, "HIGH HIHI ADEL")
    field (FLNK, "$(P)$(DET4):sDetTyp")   
    field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
@@ -840,6 +863,7 @@ record(calc, "$(P)$(DET4):sAccDose") {
    field (INPB, "$(P)$(DET4):sAccDoseExp")
    field (CALC, "A*10^B")
    field (PREC, "2")   
+   field (ADEL, "1.0")
    field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
