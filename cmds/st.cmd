@@ -1,8 +1,8 @@
 require dpu,1.0.1
  
-#require autosave,5.10.2
+require autosave,5.10.2
  
-Specify the TCP endpoint and give your 'bus' an arbitrary name eg. "asynstream1".
+#Specify the TCP endpoint and give your 'bus' an arbitrary name eg. "asynstream1".
 drvAsynIPPortConfigure("PORT1","192.168.10.5:4001",0,0,0)
 
 #drvAsynSerialPortConfigure ("asynport2","/dev/ttyS0")
