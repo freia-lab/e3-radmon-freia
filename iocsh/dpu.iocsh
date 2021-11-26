@@ -1,0 +1,40 @@
+# This should be the included snippet to configure and run the deployed IOC. It should be loaded with
+#
+#   iocshLoad("$(dpu_DIR)/dpu.iocsh", "ASYN_PORT_NAME=<port_name>, DPU_IP=<ip_addr>, DPU_PREFIX=<pv_prefix>")
+
+#- ###                DPU   iocsh               ###
+#- ####################################################
+#- >> Mandatory
+#- ASYN_PORT_NAME - ASYN port name  <name> on address <IPaddr> port <port>
+#- DPU_IP         - DPU controller IP address
+#- DPU_PREFIX	  - PV Prefix
+#-
+#- >> Optional
+#-
+#- https://epics.anl.gov/modules/soft/asyn/R4-29/asynDriver.html#drvAsynIPPort
+#- 
+#- DPU_PORT	  - ASYN   DPU controller (Moxa) port , default 5000
+#- PRIORITY       - ASYN   PRIORITY, Default : 0
+#- NOAUTOCONNECT  - ASYN   noAutoconnect, Default : 0
+#-                         0 :    Auto connection
+#-                         1 : no Auto connection
+#- NOPROCESSEOS   - ASYN   noProcessEos, Default : 0
+#-
+epicsEnvSet(DPU_NAME,  "$(ASYN_PORT_NAME)")
+epicsEnvSet(DPU_INET,  "$(DPU_IP)")
+epicsEnvSet(DPU_PORT,  "$(DPU_PORT=4001)")
+epicsEnvSet(DPU_PRIORITY, "$(PRIORITY=0)")
+epicsEnvSet(DPU_NOAUTOCONNECT, "$(NOAUTOCONNECT=0)")
+epicsEnvSet(DPU_NOPROCESSEOS, "$(NOPROCESSEOS=0)")
+
+
+#-
+#-https://epics.anl.gov/modules/soft/asyn/R4-29/asynDriver.html#drvAsynSerialPort
+drvAsynIPPortConfigure($(DPU_NAME), $(DPU_INET):$(DPU_PORT),$(DPU_PRIORITY),$(DPU_NOAUTOCONNECT),$(DPU_NOPROCESSEOS))
+#-
+
+#Indicate the folder where the DPU protocol file is installed
+epicsEnvSet("STREAM_PROTOCOL_PATH","$(dpu_DB)")
+
+#Load your database defining the EPICS records
+dbLoadRecords("dpu.db", "PORT=$(DPU_NAME),P=$(DPU_PREFIX),DET1=Office:GD-01,DET2=Bunker1:GD-01,DET3=Bunker1:GD-02,DET4=Bunker1:GD-03")

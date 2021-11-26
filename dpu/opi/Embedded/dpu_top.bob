@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>dpu freia top</name>
+  <width>1110</width>
+  <height>810</height>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <PREFIX>RadProt-Office:GD-01:</PREFIX>
+    </macros>
+    <file>dpu_template.bob</file>
+    <y>80</y>
+    <width>540</width>
+    <height>310</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <PREFIX>RadProt-Bunker1:GD-01:</PREFIX>
+    </macros>
+    <file>dpu_template.bob</file>
+    <x>580</x>
+    <y>80</y>
+    <width>540</width>
+    <height>310</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <PREFIX>RadProt-Bunker1:GD-02:</PREFIX>
+    </macros>
+    <file>dpu_template.bob</file>
+    <y>380</y>
+    <width>540</width>
+    <height>310</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <PREFIX>RadProt-Bunker1:GD-03:</PREFIX>
+    </macros>
+    <file>dpu_template.bob</file>
+    <x>580</x>
+    <y>380</y>
+    <width>540</width>
+    <height>310</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>FREIA Radiation Monitoring System Settings</text>
+    <x>50</x>
+    <y>10</y>
+    <width>730</width>
+    <height>60</height>
+    <font>
+      <font name="HEADER" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>../../freia-symbols/display-builder/asyn/asynRecord.bob</file>
+        <macros>
+          <P>ioc01-dpu:</P>
+          <R>asynRec</R>
+        </macros>
+        <target>window</target>
+        <description>asynRecord (for debugging)...</description>
+      </action>
+    </actions>
+    <pv_name>ioc01-dpu:asynRec</pv_name>
+    <x>420</x>
+    <y>690</y>
+    <width>220</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>   RecCaster Status</name>
+    <macros>
+      <IOC>ioc02-dpu3</IOC>
+    </macros>
+    <x>50</x>
+    <y>690</y>
+    <width>328</width>
+    <height>110</height>
+    <style>1</style>
+    <font>
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="PRIMARY-GROUP-BORDER" red="151" green="188" blue="202">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Read_Background" red="230" green="235" blue="232">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="label" version="2.0.0">
+      <name>Label_136</name>
+      <text>State</text>
+      <x>150</x>
+      <y>14</y>
+      <width>150</width>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_137</name>
+      <text>Info Message</text>
+      <x>150</x>
+      <y>44</y>
+      <width>150</width>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_11</name>
+      <pv_name>$(IOC):RecSync-State-Sts</pv_name>
+      <x>20</x>
+      <y>14</y>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="alarmRule" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="ERROR" red="252" green="13" blue="27">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==4">
+            <value>
+              <color name="OK" red="61" green="216" blue="61">
+              </color>
+            </value>
+          </exp>
+          <pv_name>$(pv_name)</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_12</name>
+      <pv_name>$(IOC):RecSync-Msg-I</pv_name>
+      <x>20</x>
+      <y>44</y>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="alarmRule" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="ORANGE" red="254" green="194" blue="81">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Synchronized&quot;">
+            <value>
+              <color name="OK" red="61" green="216" blue="61">
+              </color>
+            </value>
+          </exp>
+          <pv_name>$(pv_name)</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+</display>
