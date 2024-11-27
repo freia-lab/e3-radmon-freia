@@ -117,8 +117,8 @@ HH:mm</formatPattern>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
             <archive>
-                <name>RDB</name>
-                <url>jdbc:postgresql://192.168.10.108/css_archive_3_0_0</url>
+                <name>pbraw://130.238.200.137:17668/retrieval</name>
+                <url>pbraw://130.238.200.137:17668/retrieval</url>
                 <key>1</key>
             </archive>
         </pv>

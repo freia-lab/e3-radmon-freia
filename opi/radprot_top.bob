@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-11-27 15:29:20 by konrad-->
 <display version="2.0.0">
   <name>Radprot-freia</name>
   <macros>
@@ -51,7 +52,7 @@
       </color>
     </border_color>
   </widget>
-  <widget type="group" version="2.0.0">
+  <widget type="group" version="3.0.0">
     <name>Panel 2</name>
     <x>15</x>
     <y>55</y>
@@ -62,6 +63,10 @@
       <color red="0" green="128" blue="255">
       </color>
     </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
     <background_color>
       <color red="240" green="240" blue="240">
       </color>
@@ -94,13 +99,13 @@
       </actions>
       <border_width>3</border_width>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Panel 2_1</name>
       <macros>
         <param>$(P)-Bunker1:GD-02:sDoseRt</param>
       </macros>
-      <x>150</x>
-      <y>130</y>
+      <x>674</x>
+      <y>365</y>
       <width>330</width>
       <height>130</height>
       <visible>false</visible>
@@ -109,6 +114,10 @@
         <color red="0" green="128" blue="255">
         </color>
       </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
       <background_color>
         <color red="240" green="240" blue="240">
         </color>
@@ -152,7 +161,7 @@ IN BUNKER</text>
         <x>62</x>
         <y>36</y>
         <width>148</width>
-        <height>41</height>
+        <height>38</height>
         <font>
           <font family="Sans" style="BOLD" size="14.851485148514852">
           </font>
@@ -205,7 +214,7 @@ IN BUNKER</text>
       <x>345</x>
       <y>47</y>
       <width>96</width>
-      <height>25</height>
+      <height>21</height>
       <foreground_color>
         <color name="BLACK" red="0" green="0" blue="0">
         </color>
@@ -223,7 +232,7 @@ IN BUNKER</text>
         </color>
       </border_color>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Panel 2_1</name>
       <macros>
         <param>$(P)-Bunker1:GD-03:sDoseRt</param>
@@ -238,6 +247,10 @@ IN BUNKER</text>
         <color red="0" green="128" blue="255">
         </color>
       </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
       <background_color>
         <color red="240" green="240" blue="240">
         </color>
@@ -279,7 +292,7 @@ $(pv_value)</tooltip>
         <x>10</x>
         <y>70</y>
         <width>119</width>
-        <height>23</height>
+        <height>21</height>
         <font>
           <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
           </font>
@@ -306,10 +319,10 @@ $(pv_value)</tooltip>
       <name>Label Template_1</name>
       <text>FREIA
 Bunker</text>
-      <x>625</x>
+      <x>600</x>
       <y>345</y>
       <width>49</width>
-      <height>49</height>
+      <height>44</height>
       <foreground_color>
         <color name="BLACK" red="0" green="0" blue="0">
         </color>
@@ -352,7 +365,7 @@ Bunker</text>
       </actions>
       <border_width>3</border_width>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Panel 2_1</name>
       <macros>
         <param>$(P)-Office:GD-01:sDoseRt</param>
@@ -365,6 +378,10 @@ Bunker</text>
         <color red="0" green="128" blue="255">
         </color>
       </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
       <background_color>
         <color red="240" green="240" blue="240">
         </color>
@@ -404,7 +421,7 @@ $(pv_value)</tooltip>
         <text>DOSE RATE HIGH</text>
         <x>90</x>
         <width>119</width>
-        <height>23</height>
+        <height>21</height>
         <font>
           <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
           </font>
@@ -427,7 +444,7 @@ $(pv_value)</tooltip>
         </border_color>
       </widget>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Panel 2_1</name>
       <macros>
         <param>$(P)-Bunker1:GD-01:sDoseRt</param>
@@ -441,6 +458,10 @@ $(pv_value)</tooltip>
         <color red="0" green="128" blue="255">
         </color>
       </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
       <background_color>
         <color red="240" green="240" blue="240">
         </color>
@@ -482,7 +503,7 @@ $(pv_value)</tooltip>
         <x>10</x>
         <y>70</y>
         <width>119</width>
-        <height>23</height>
+        <height>21</height>
         <font>
           <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
           </font>
@@ -633,7 +654,7 @@ Bunker</text>
       <x>675</x>
       <y>665</y>
       <width>49</width>
-      <height>49</height>
+      <height>44</height>
       <foreground_color>
         <color name="BLACK" red="0" green="0" blue="0">
         </color>
@@ -651,9 +672,9 @@ Bunker</text>
         </color>
       </border_color>
     </widget>
-    <widget type="group" version="2.0.0">
+    <widget type="group" version="3.0.0">
       <name>Panel 2</name>
-      <x>35</x>
+      <x>155</x>
       <y>115</y>
       <width>250</width>
       <height>67</height>
@@ -662,6 +683,10 @@ Bunker</text>
         <color red="0" green="128" blue="255">
         </color>
       </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
       <background_color>
         <color name="WHITE" red="255" green="255" blue="255">
         </color>
@@ -767,20 +792,18 @@ Bunker</text>
         <wrap_words>false</wrap_words>
         <actions>
         </actions>
-        <rules>
-        </rules>
         <border_width>2</border_width>
       </widget>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label</name>
       <text>FREIA Bunker Clearing Status</text>
-      <x>55</x>
+      <x>175</x>
       <y>85</y>
       <width>230</width>
     </widget>
   </widget>
-  <widget type="group" version="2.0.0">
+  <widget type="group" version="3.0.0">
     <name>Panel 2_5</name>
     <x>1210</x>
     <y>55</y>
@@ -791,6 +814,10 @@ Bunker</text>
       <color red="0" green="128" blue="255">
       </color>
     </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
     <background_color>
       <color red="240" green="240" blue="240">
       </color>
@@ -798,7 +825,7 @@ Bunker</text>
     <transparent>true</transparent>
     <actions>
     </actions>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template</name>
       <width>397</width>
       <height>216</height>
@@ -822,7 +849,7 @@ Bunker</text>
       <show_toolbar>false</show_toolbar>
       <actions>
       </actions>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -832,6 +859,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
@@ -851,7 +882,7 @@ Bunker</text>
         </trace>
       </traces>
     </widget>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template_2</name>
       <x>390</x>
       <width>397</width>
@@ -889,7 +920,7 @@ Bunker</text>
           <pv_name>$(P)-Bunker1:GD-03:sDoseRt</pv_name>
         </rule>
       </rules>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -899,6 +930,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
@@ -918,7 +953,7 @@ Bunker</text>
         </trace>
       </traces>
     </widget>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template_3</name>
       <y>216</y>
       <width>397</width>
@@ -943,7 +978,7 @@ Bunker</text>
       <show_toolbar>false</show_toolbar>
       <actions>
       </actions>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -953,6 +988,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
@@ -972,7 +1011,7 @@ Bunker</text>
         </trace>
       </traces>
     </widget>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template_4</name>
       <x>396</x>
       <y>216</y>
@@ -998,7 +1037,7 @@ Bunker</text>
       <show_toolbar>false</show_toolbar>
       <actions>
       </actions>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -1008,6 +1047,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
@@ -1061,6 +1104,7 @@ Bunker</text>
       <action type="open_display">
         <file>accDose.bob</file>
         <target>standalone</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Accumulated Dose...</text>
@@ -1076,6 +1120,7 @@ Bunker</text>
       <action type="open_display">
         <file>doseRtHis.bob</file>
         <target>window</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Dose Rate History...</text>
@@ -1091,6 +1136,7 @@ Bunker</text>
       <action type="open_display">
         <file>Embedded/limits.bob</file>
         <target>window</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Alarm Levels...</text>
@@ -1106,6 +1152,7 @@ Bunker</text>
       <action type="open_display">
         <file>Embedded/dpu_top.bob</file>
         <target>window</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Detector Settings...</text>
@@ -1115,7 +1162,7 @@ Bunker</text>
     <height>43</height>
     <tooltip>$(actions)</tooltip>
   </widget>
-  <widget type="group" version="2.0.0">
+  <widget type="group" version="3.0.0">
     <name>Panel 2_6</name>
     <x>1200</x>
     <y>530</y>
@@ -1126,6 +1173,10 @@ Bunker</text>
       <color red="0" green="128" blue="255">
       </color>
     </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
     <background_color>
       <color red="240" green="240" blue="240">
       </color>
@@ -1133,7 +1184,7 @@ Bunker</text>
     <transparent>true</transparent>
     <actions>
     </actions>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template_1</name>
       <width>397</width>
       <height>216</height>
@@ -1157,7 +1208,7 @@ Bunker</text>
       <show_toolbar>false</show_toolbar>
       <actions>
       </actions>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -1167,6 +1218,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
@@ -1186,7 +1241,7 @@ Bunker</text>
         </trace>
       </traces>
     </widget>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template_5</name>
       <x>390</x>
       <width>397</width>
@@ -1224,7 +1279,7 @@ Bunker</text>
           <pv_name>$(P)-Bunker1:GD-03:sDoseRt</pv_name>
         </rule>
       </rules>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -1234,6 +1289,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
@@ -1253,7 +1312,7 @@ Bunker</text>
         </trace>
       </traces>
     </widget>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template_6</name>
       <y>216</y>
       <width>397</width>
@@ -1278,7 +1337,7 @@ Bunker</text>
       <show_toolbar>false</show_toolbar>
       <actions>
       </actions>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -1288,6 +1347,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
@@ -1307,7 +1370,7 @@ Bunker</text>
         </trace>
       </traces>
     </widget>
-    <widget type="stripchart" version="2.0.0">
+    <widget type="stripchart" version="2.1.0">
       <name>XY Graph Template_7</name>
       <x>396</x>
       <y>216</y>
@@ -1333,7 +1396,7 @@ Bunker</text>
       <show_toolbar>false</show_toolbar>
       <actions>
       </actions>
-      <time_range>30 minute</time_range>
+      <start>30 minute</start>
       <y_axes>
         <y_axis>
           <title>µSv/h</title>
@@ -1343,6 +1406,10 @@ Bunker</text>
           <maximum>1.0</maximum>
           <show_grid>false</show_grid>
           <visible>true</visible>
+          <color>
+            <color name="Text" red="25" green="25" blue="25">
+            </color>
+          </color>
         </y_axis>
       </y_axes>
       <traces>
