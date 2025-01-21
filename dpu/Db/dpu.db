@@ -148,6 +148,7 @@ record(calc, "$(P)$(DET1):sDoseRt") {
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
    field (ADEL, "0.3")
+   field (EGU, "μSv/h")
    info (autosaveFields, "HIGH HIHI ADEL")
    field (FLNK, "$(P)$(DET1):sDetTyp")   
    field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
@@ -179,6 +180,7 @@ record(calc, "$(P)$(DET1):sAccDose") {
    field (CALC, "A*10^B")
    field (PREC, "2")   
    field (ADEL, "1.0")
+   field (EGU, "μSv")
    field (SDIS, "$(P)$(DET1):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
@@ -385,6 +387,7 @@ record(calc, "$(P)$(DET2):sDoseRt") {
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
    field (ADEL, "0.3")
+   field (EGU, "μSv/h")
    info (autosaveFields, "HIGH HIHI ADEL")
    field (FLNK, "$(P)$(DET2):sDetTyp")   
    field (SDIS, "$(P)$(DET2):sString.PACT NPP MS")
@@ -416,6 +419,7 @@ record(calc, "$(P)$(DET2):sAccDose") {
    field (CALC, "A*10^B")
    field (PREC, "2")   
    field (ADEL, "2.0")
+   field (EGU, "μSv")
    field (SDIS, "$(P)$(DET2):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
@@ -610,6 +614,7 @@ record(calc, "$(P)$(DET3):sDoseRt") {
    field (HYST, "2.0")
    field (ADEL, "0.3")
    info (autosaveFields, "HIGH HIHI ADEL")
+   field (EGU, "μSv/h")
    field (FLNK, "$(P)$(DET3):sDetTyp")   
    field (SDIS, "$(P)$(DET3):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
@@ -640,6 +645,7 @@ record(calc, "$(P)$(DET3):sAccDose") {
    field (CALC, "A*10^B")
    field (PREC, "2")   
    field (ADEL, "1.0")
+   field (EGU, "μSv")
    field (SDIS, "$(P)$(DET3):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
@@ -833,6 +839,7 @@ record(calc, "$(P)$(DET4):sDoseRt") {
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
    field (ADEL, "0.3")
+   field (EGU, "μSv/h")
    info (autosaveFields, "HIGH HIHI ADEL")
    field (FLNK, "$(P)$(DET4):sDetTyp")   
    field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
@@ -864,6 +871,7 @@ record(calc, "$(P)$(DET4):sAccDose") {
    field (CALC, "A*10^B")
    field (PREC, "2")   
    field (ADEL, "1.0")
+   field (EGU, "μSv")
    field (SDIS, "$(P)$(DET4):sString.PACT NPP MS")
    field (DISV, "-1") # Will never disable, but will propagate severity
 }
